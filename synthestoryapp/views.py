@@ -1,4 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
-from synthestoryapp import models
+from .models import Genre
 
+class LandingPageView(generic.ListView):
+    model = Genre
+    template_name = 'index.html'
