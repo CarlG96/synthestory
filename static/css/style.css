@@ -1,15 +1,6 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Sail&display=swap');
 
-* {
-    font-family: 'Roboto', 'sans-serif';
-}
-
-.main-logo {
-    color: var(--main-brand);
-    font-family: 'Sail', 'Roboto', 'sans-serif';
-}
-
 /* Colors */
 :root {
     --light-shade: #faf7f7;
@@ -17,6 +8,17 @@
     --main-brand: #82a127;
     --dark-accent: #734f36;
     --dark-shade: #312834;
+}
+
+* {
+    font-family: 'Roboto', 'sans-serif';
+    background-color: var(--dark-shade);
+}
+
+.main-logo {
+    color: var(--main-brand);
+    font-family: 'Sail', 'Roboto', 'sans-serif';
+    font-size: 3rem;
 }
 
 .black-background {
