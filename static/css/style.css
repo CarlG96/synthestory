@@ -1,0 +1,109 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Sail&display=swap');
+
+* {
+    font-family:'Roboto', 'sans-serif';
+}
+/* Colors */
+:root {
+    --light-shade: #faf7f7;
+    --light-accent: #8b875a;
+    --main-brand: #82a127;
+    --dark-accent: #734f36;
+    --dark-shade: #312834;
+}
+
+.black-background {
+    background-color: var(--dark-shade);
+}
+
+.white-background {
+    background-color: var(--light-shade);
+}
+
+.light-accent-background {
+    background-color: var(--light-accent);
+}
+
+.green-background {
+    background-color: var(--main-brand);
+}
+
+.brown-background {
+    background-color: var(--dark-accent);
+}
+
+.white-text {
+    color: var(--light-shade);
+}
+
+.black-text {
+    color: var(--dark-shade);
+}
+
+.green-text {
+    color: var(--main-brand);
+}
+
+/* Spacing */
+
+a i {
+    font-size: 300%;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.link:hover {
+    color: var(--main-brand);
+    transition: all color 0.5s ease-out;
+}
+
+.link:focus {
+    color: var(--main-brand);
+}
+
+.footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.inline-list {
+    display: inline;
+}
+
+.nav-float {
+    margin-left: 10vw;
+    justify-content: right;
+}
+
+/*media queries */
+@media screen and (min-width: 800px) {
+    .nav-float {
+        margin-left: 12vw;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .nav-float {
+        margin-left: 15vw;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    .nav-float {
+        margin-left: 20vw;
+    }
+}
+
+
