@@ -123,6 +123,25 @@ a i {
     text-align: left;
 }
 
+.generate-button {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: var(--light-shade);
+    background-color: var(--light-accent);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-top-left-radius: 10px 30px;
+    border-bottom-right-radius: 10px 30px;
+}
+
+.generate-button a {
+    color: var(--light-shade);
+    background-color: var(--light-accent);
+    text-decoration: none;
+    font-size: larger;
+}
+
 /* media queries for Genre page */
 @media screen and (max-width: 1200px) {
     .genre-image {
@@ -135,7 +154,12 @@ a i {
     .genre-image {
         display: none;
     }
+
+    .generate-button {
+        margin-top: 0;
+    }
 }
+
 
 /*media queries for base.html */
 @media screen and (min-width: 800px) {

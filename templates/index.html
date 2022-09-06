@@ -8,9 +8,10 @@
             <div class="col-xl-2">
                 <h2 class="white-text inline-text">{{ genre.genre_title }}</h2>
                 <p class="white-text genre-paragraph-text">{{ genre.genre_description }}</p>
+                <button type="button" class="generate-button"><a href="#">Generate {{ genre.genre_title }} Idea!</a></button>
             </div>
             <div class="col-xl-4">
-                <a href="#"><img class="genre-image" src="{{ genre.genre_image.url }}" alt="{{ genre.genre_title }}"></a>
+                <img class="img-fluid genre-image" src="{{ genre.genre_image.url }}" alt="{{ genre.genre_title }}">
             </div>
             {% if forloop.counter|divisibleby:2 %}
          </div>
