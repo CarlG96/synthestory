@@ -86,10 +86,15 @@ a i {
 .footer {
     padding-top: 10px;
     padding-bottom: 10px;
-    border: 5px solid var(--main-brand);
+    
     margin-bottom: 10px;
 }
 
+.social-media-border {
+    padding:10px;
+    border-radius: 10px;
+    border: 5px solid var(--main-brand);
+}
 
 .center-text {
     text-align: center;
@@ -154,7 +159,7 @@ a i {
 
 /* generic area used for bordering with container-fluid class */
 .generic-area {
-    border:2px solid var(--main-brand);
+    border:5px solid var(--dark-accent);
     padding-top: 5px;
 }
 
