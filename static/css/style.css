@@ -128,18 +128,29 @@ a i {
     margin-right: 20px;
     text-decoration: none;
     color: var(--light-shade);
-    background-color: var(--light-accent);
+    background-color: var(--dark-shade);
     margin-top: 15px;
     margin-bottom: 15px;
     border-top-left-radius: 10px 30px;
     border-bottom-right-radius: 10px 30px;
+    border-color: var(--main-brand);
+    border-width: 5px;
 }
+
+
+
+
 
 .generate-button a {
     color: var(--light-shade);
-    background-color: var(--light-accent);
+    background-color: var(--dark-shade);
     text-decoration: none;
     font-size: larger;
+}
+
+.generate-button a:hover, .generate-button a:focus {
+    color: var(--main-brand);
+    transition: all color 0.5s ease-out;
 }
 
 /* media queries for Genre page */
