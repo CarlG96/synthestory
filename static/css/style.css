@@ -2,8 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Sail&display=swap');
 
 * {
-    font-family:'Roboto', 'sans-serif';
+    font-family: 'Roboto', 'sans-serif';
 }
+
+.main-logo {
+    color: var(--main-brand);
+    font-family: 'Sail', 'Roboto', 'sans-serif';
+}
+
 /* Colors */
 :root {
     --light-shade: #faf7f7;
