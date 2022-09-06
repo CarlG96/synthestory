@@ -111,9 +111,11 @@ a i {
 
 /* Genre page */
 .genre-image {
-    width: 30vw;
+    width: 25vw;
     height: 40vh;
     margin-bottom: 30px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .inline-text {
@@ -160,14 +162,15 @@ a i {
 /* generic area used for bordering with container-fluid class */
 .generic-area {
     border:5px solid var(--dark-accent);
-    padding-top: 5px;
+    padding-top: 20px;
 }
 
 /* media queries for Genre page */
 @media screen and (max-width: 1200px) {
     .genre-image {
-    width: 98vw;
-    height: 40vh; 
+    padding-left:2vw;
+    width: 90vw;
+    height: 20vh; 
     }
 }
 

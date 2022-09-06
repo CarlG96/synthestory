@@ -11,7 +11,7 @@
                 <button type="button" class="generate-button"><a href="#">Generate {{ genre.genre_title }} Idea!</a></button>
             </div>
             <div class="col-xl-4">
-                <img class="img-fluid genre-image" src="{{ genre.genre_image.url }}" alt="{{ genre.genre_title }}">
+                <img class="genre-image" src="{{ genre.genre_image.url }}" alt="{{ genre.genre_title }}">
             </div>
             {% if forloop.counter|divisibleby:2 %}
          </div>
