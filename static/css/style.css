@@ -1,6 +1,7 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Sail&display=swap');
 
+
 /* Colors */
 :root {
     --light-shade: #faf7f7;
@@ -12,6 +13,9 @@
 
 * {
     font-family: 'Roboto', 'sans-serif';
+}
+
+body {
     background-color: var(--dark-shade);
 }
 
@@ -20,6 +24,7 @@
     font-family: 'Sail', 'Roboto', 'sans-serif';
     font-size: 3rem;
 }
+
 
 @media screen and (max-width: 400px) {
     .main-logo {
@@ -81,12 +86,10 @@ a i {
 .footer {
     padding-top: 10px;
     padding-bottom: 10px;
+    border: 5px solid var(--main-brand);
+    margin-bottom: 10px;
 }
 
-.header {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
 
 .center-text {
     text-align: center;
@@ -137,10 +140,6 @@ a i {
     border-width: 5px;
 }
 
-
-
-
-
 .generate-button a {
     color: var(--light-shade);
     background-color: var(--dark-shade);
@@ -151,6 +150,12 @@ a i {
 .generate-button a:hover, .generate-button a:focus {
     color: var(--main-brand);
     transition: all color 0.5s ease-out;
+}
+
+/* generic area used for bordering with container-fluid class */
+.generic-area {
+    border:2px solid var(--main-brand);
+    padding-top: 5px;
 }
 
 /* media queries for Genre page */
@@ -168,26 +173,6 @@ a i {
 
     .generate-button {
         margin-top: 0;
-    }
-}
-
-
-/*media queries for base.html */
-@media screen and (min-width: 800px) {
-    .nav-float {
-        margin-left: 12vw;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    .nav-float {
-        margin-left: 15vw;
-    }
-}
-
-@media screen and (min-width: 2000px) {
-    .nav-float {
-        margin-left: 20vw;
     }
 }
 

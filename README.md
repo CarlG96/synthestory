@@ -4,3 +4,4 @@ SyntheStory is a website that randomly generates story ideas for authors. A user
 
 https://www.youtube.com/watch?v=qNifU_aQRio tutorial for navbar
 pixabay for images
+https://www.youtube.com/watch?v=GUEB9FogoP8&list=PLDyQo7g0_nsXEOxGlAgccV8fu-cHZnI5B&index=8 for animation of logo
