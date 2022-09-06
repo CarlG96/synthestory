@@ -21,6 +21,12 @@
     font-size: 3rem;
 }
 
+@media screen and (max-width: 400px) {
+    .main-logo {
+        font-size: 2rem;
+    }
+}
+
 .black-background {
     background-color: var(--dark-shade);
 }
@@ -95,7 +101,43 @@ a i {
     justify-content: right;
 }
 
-/*media queries */
+/* Genre page */
+.genre-image {
+    width: 30vw;
+    height: 40vh;
+    margin-bottom: 30px;
+}
+
+.inline-text {
+    display: inline;
+    margin-right: 20px;
+    margin-left: 20px;
+    text-align: left;
+}
+
+
+
+.genre-paragraph-text {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: left;
+}
+
+/* media queries for Genre page */
+@media screen and (max-width: 1200px) {
+    .genre-image {
+    width: 98vw;
+    height: 40vh; 
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .genre-image {
+        display: none;
+    }
+}
+
+/*media queries for base.html */
 @media screen and (min-width: 800px) {
     .nav-float {
         margin-left: 12vw;

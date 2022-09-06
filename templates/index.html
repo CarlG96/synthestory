@@ -1,8 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Hello World!</h1>
-    {% for genre in object_list %}
-        <h2>{{ genre.genre_title }}</h2>
-    {% endfor %}
+
+    <div class="container-fluid">
+        <div class="row">
+            {% for genre in object_list %}
+            <div class="col-xl-2">
+                <h2 class="white-text inline-text">{{ genre.genre_title }}</h2>
+                <p class="white-text genre-paragraph-text">{{ genre.genre_description }}</p>
+            </div>
+            <div class="col-xl-4">
+                <a href="#"><img class="genre-image" src="{{ genre.genre_image.url }}" alt="{{ genre.genre_title }}"></a>
+            </div>
+            {% if forloop.counter|divisibleby:2 %}
+         </div>
+         <div class="row">
+            {% endif %}
+            {% endfor %}
+    </div>
 {% endblock %}
