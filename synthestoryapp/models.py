@@ -60,3 +60,17 @@ class StoryEnd(models.Model):
     def number_of_story_ends(self):
         pass
 
+
+class StoryIdeas(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(max_length=30)
+    story_text = models.CharField(max_length=200)
+    creation_date = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+    slug = models.SlugField(max_length=200, unique=True)
+
+    def __str__(self):
+        return self.title
+    
+    def number_of_story_ideas(self):
+        pass
