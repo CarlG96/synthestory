@@ -47,7 +47,7 @@ class StoryMiddle(models.Model):
 
 
 class StoryEnd(models.Model):
-    story_text = models.CharField(max_length=30, unique=True)
+    story_text = models.CharField(max_length=60, unique=True)
     creation_date = models.DateTimeField(auto_now_add=True)
     genre = models.ForeignKey('Genre', on_delete=models.CASCADE)
 
