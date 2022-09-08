@@ -2,6 +2,10 @@ from django.shortcuts import render
 from .models import Genre, StoryStart, StoryMiddle, StoryEnd
 import random
 
+
+def get_home_page(request):
+    return render(request, 'home.html')
+
 def get_genre_page(request):
     genres = Genre.objects.all()
     context = {
