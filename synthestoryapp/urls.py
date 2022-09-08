@@ -5,5 +5,5 @@ from django.urls import path
 urlpatterns = [
     path('home/', get_home_page, name='home'),
     path('', get_genre_page, name="genre-page"),
-    path('genre-type/', get_genre_type_page, name="genre-type")
+    path('genre-type/<str:id>/', get_genre_type_page, name="genre-type")
 ]
