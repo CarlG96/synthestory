@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from django.views import generic
 from .models import Genre
 
 
-class LandingPageView(generic.ListView):
-    model = Genre
-    template_name = 'index.html'
+def get_genre_page(request):
+    genres = Genre.objects.all()
+    context = {
+        'genres': genres
+    }
+    return render(request, 'genre-page.html', context)

@@ -1,10 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
     <div class="container-fluid generic-area">
         <div class="row">
-            {% for genre in object_list %}
+            {% for genre in genres %}
             <div class="col-xl-2">
                 <h2 class="white-text inline-text">{{ genre.genre_title }}</h2>
                 <p class="white-text genre-paragraph-text">{{ genre.genre_description }}</p>
