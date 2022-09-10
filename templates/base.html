@@ -25,7 +25,6 @@
     <header>     
         <nav class="navbar navbar-expand-md black-background white-text">
             <a href="{% url 'home' %}" class="h1 ps-3 link main-logo" id="main-logo">SyntheStory</a>
-        </div>
 
             <button class="navbar-toggler white-text link p-0" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -38,6 +37,12 @@
                         <a href="{% url 'home' %}" class="nav-link white-text link center-text nav-float"><h2>Home</h2></a>
                     </li>
                     {% if user.is_authenticated %}
+                    <li class="nav-item active">
+                        <a href="{% url 'genre-page' %}" class="nav-link white-text link center-text nav-float"><h2>Create Idea</h2></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link white-text link center-text nav-float"><h2>My Stories</h2></a>
+                    </li>
                     <li class="nav-item active">
                         <a href="{% url 'account_logout' %}" class="nav-link white-text link center-text nav-float"><h2>Logout</h2></a>
                     </li>
