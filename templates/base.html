@@ -37,13 +37,19 @@
                     <li class="nav-item active">
                         <a href="{% url 'home' %}" class="nav-link white-text link center-text nav-float"><h2>Home</h2></a>
                     </li>
+                    {% if user.is_authenticated %}
                     <li class="nav-item active">
-                        <a href="#" class="nav-link white-text link center-text nav-float"><h2>Login</h2></a>
+                        <a href="{% url 'account_logout' %}" class="nav-link white-text link center-text nav-float"><h2>Logout</h2></a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item active">
+                        <a href="{% url 'account_login' %}" class="nav-link white-text link center-text nav-float"><h2>Login</h2></a>
                     </li>
                 
                     <li class="nav-item active">
-                        <a href="#" class="nav-link white-text link center-text nav-float"><h2>Signup</h2></a>
+                        <a href="{% url 'account_signup' %}" class="nav-link white-text link center-text nav-float"><h2>Signup</h2></a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

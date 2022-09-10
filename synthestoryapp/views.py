@@ -14,10 +14,11 @@ def get_genre_page(request):
     return render(request, 'genre-page.html', context)
 
 def get_genre_type_page(request, id):
+    # creates a random sentence that relates to the currently selected genre
+    # can be redone with better code
+
     story_starts = StoryStart.objects.all().filter(genre=id)
-    print(story_starts)
     story_starts_list = list(story_starts)
-    print(story_starts_list)
     rand_number = random.randrange(0, len(story_starts_list))
     story_start = story_starts_list[rand_number]
 
