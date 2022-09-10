@@ -10,12 +10,9 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2 generic-area">
-
-      <h1 class="white-text">{% trans "Sign In" %}</h1>
-
-      <p class="white-text">{% blocktrans %}If you have not created an account yet, then please
+      <h1 class="white-text center-text">{% trans "Sign In" %}</h1>
+      <p class="white-text center-text">{% blocktrans %}If you have not created an account yet, then please
         <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-
       <form class="login white-text" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
         {{ form.as_p }}
