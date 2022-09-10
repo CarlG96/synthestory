@@ -163,6 +163,7 @@ a i {
 .generic-area {
     border:5px solid var(--dark-accent);
     padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 /* media queries for Genre page */
