@@ -13,10 +13,12 @@
 
 {% endblock %}
 {% block script %}
+<!--Script added here instead of externally due to inability to handle Django's 
+                            data otherwise -->
 <script>
     document.addEventListener('DOMContentLoaded', event => {
     let storyStart = `{{ story_start }} {{ story_middle }} {{ story_end }}`;
-    document.getElementById("id_story_text").setAttribute("placeholder", storyStart);
+    document.getElementById("id_story_text").setAttribute("value", storyStart);
 })
 </script>
 {% endblock %}
