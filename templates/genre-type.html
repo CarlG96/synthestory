@@ -8,6 +8,8 @@
     {{ story_idea_form | crispy }}
     {% csrf_token %}
     <button type="submit" class="button btn-signup mt-2">Submit</button>
+    <!--Redirects to same page-->
+    <button type="button" class="generate-button"><a href="{{ request.path }}">Generate Another Idea!</a></button>
 </form>
 
 {% endblock %}
