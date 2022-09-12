@@ -41,7 +41,7 @@
                         <a href="{% url 'genre-page' %}" class="nav-link white-text link center-text nav-float"><h2>Create Idea</h2></a>
                     </li>
                     <li class="nav-item active">
-                        <a href="#" class="nav-link white-text link center-text nav-float"><h2>My Stories</h2></a>
+                        <a href="/my-stories/{{user.id}}" class="nav-link white-text link center-text nav-float"><h2>My Stories</h2></a>
                     </li>
                     <li class="nav-item active">
                         <a href="{% url 'account_logout' %}" class="nav-link white-text link center-text nav-float"><h2>Logout</h2></a>
