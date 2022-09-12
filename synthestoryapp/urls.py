@@ -1,5 +1,5 @@
 from . import views
-from .views import get_genre_page, get_genre_type_page, get_home_page, get_my_stories_page, post_genre_type_page
+from .views import get_genre_page, get_genre_type_page, get_home_page, get_my_stories_page
 from django.urls import path
 
 urlpatterns = [

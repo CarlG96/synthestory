@@ -57,7 +57,6 @@ class StoryIdea(models.Model):
     story_text = models.CharField(max_length=200, blank=False)
     creation_date = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    slug = models.SlugField(max_length=30, unique=True)
 
     class Meta:
         ordering = ['-creation_date']
