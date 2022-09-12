@@ -27,9 +27,6 @@ class StoryStart(models.Model):
     def __str__(self):
         return self.story_text
 
-    def number_of_story_starts(self):
-        pass
-
 
 class StoryMiddle(models.Model):
     story_text = models.CharField(max_length=50, unique=True)
@@ -42,10 +39,6 @@ class StoryMiddle(models.Model):
     def __str__(self):
         return self.story_text
 
-    def number_of_story_middles(self):
-        pass
-
-
 class StoryEnd(models.Model):
     story_text = models.CharField(max_length=60, unique=True)
     creation_date = models.DateTimeField(auto_now_add=True)
@@ -57,20 +50,17 @@ class StoryEnd(models.Model):
     def __str__(self):
         return self.story_text
 
-    def number_of_story_ends(self):
-        pass
 
-
-class StoryIdeas(models.Model):
+class StoryIdea(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField(max_length=30)
-    story_text = models.CharField(max_length=200)
+    title = models.CharField(max_length=30, blank=False)
+    story_text = models.CharField(max_length=200, blank=False)
     creation_date = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    slug = models.SlugField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=30, unique=True)
+
+    class Meta:
+        ordering = ['-creation_date']
 
     def __str__(self):
         return self.title
-    
-    def number_of_story_ideas(self):
-        pass

@@ -40,3 +40,5 @@ def get_genre_type_page(request, id):
 
 
     return render(request, 'genre-type.html', context)
+
+# get_my_stories_page(request, id):

@@ -19,6 +19,10 @@ body {
     background-color: var(--dark-shade);
 }
 
+hr {
+    border: 4px solid var(--light-shade);
+}
+
 .main-logo {
     color: var(--main-brand);
     font-family: 'Sail', 'Roboto', 'sans-serif';
