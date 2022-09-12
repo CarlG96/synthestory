@@ -7,7 +7,7 @@
 <form action="" class="white-text container" method="post">
     {{ story_idea_form | crispy }}
     {% csrf_token %}
-    <button type="submit" class="button btn-signup mt-2">Submit</button>
+    <button type="submit" class="generate-button">Submit</button>
     <!--Redirects to same page-->
     <button type="button" class="generate-button"><a href="{{ request.path }}">Generate Another Idea!</a></button>
 </form>

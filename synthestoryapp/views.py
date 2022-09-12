@@ -51,7 +51,12 @@ def get_genre_type_page(request, id):
 
 def get_my_stories_page(request, id):
 
-    return render(request, 'my-stories.html')
+    story_ideas = StoryIdea.objects.all().filter(user = id)
+
+    context = {
+        'story_ideas': story_ideas
+    }
+    return render(request, 'my-stories.html', context)
 
     
     

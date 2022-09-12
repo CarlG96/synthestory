@@ -149,13 +149,13 @@ a i {
     border-bottom-right-radius: 10px 30px;
     border-color: var(--main-brand);
     border-width: 5px;
+    font-size: 1.8rem;
 }
 
 .generate-button a {
     color: var(--light-shade);
     background-color: var(--dark-shade);
     text-decoration: none;
-    font-size: larger;
 }
 
 .generate-button a:hover, .generate-button a:focus {

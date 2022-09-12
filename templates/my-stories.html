@@ -1,1 +1,10 @@
 {% extends 'base.html' %}
+
+{% block content %}
+<h1 class="white-text center-text"> {{ request.user.username }}</h1>
+
+{% for story_idea in story_ideas %}
+    <p class="white-text center-text">{{ story_idea }}</p>
+{% endfor %}
+
+{% endblock %}
