@@ -40,7 +40,6 @@ def get_genre_type_page(request, id):
         'story_idea_form': StoryIdeaForm()
     }
 
-
     return render(request, 'genre-type.html', context)
 
 

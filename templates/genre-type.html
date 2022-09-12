@@ -4,10 +4,18 @@
 
 {% load crispy_forms_tags %}
 
-<h1 class="white-text"> Hello World! </h1>
-<span class="white-text">{{ story_start }}</span>
-<span class="white-text">{{ story_middle }}</span>
-<span class="white-text">{{ story_end }}</span>
+
+<form action="" class="white-text container" method="post">
+    {{ story_idea_form | crispy }}
+    {% csrf_token %}
+    <button type="submit" class="button btn-signup mt-2">Submit</button>
+</form>
+
+<script>
+    let storyText = `{{ story_start }} {{story_middle}} {{story_end}}`;
+    document.getElementById("id_story_text").setAttribute("placeholder", storyText);
+    
+</script>
 
 
 

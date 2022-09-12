@@ -189,4 +189,11 @@ a i {
     }
 }
 
+/* Removes placeholder text in forms on click */
+input:focus::placeholder {
+    color: transparent;
+  }
+
+
+
 
