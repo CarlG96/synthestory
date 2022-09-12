@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Genre, StoryStart, StoryMiddle, StoryEnd
+from .forms import StoryIdeaForm
 import random
 
 
@@ -35,7 +36,8 @@ def get_genre_type_page(request, id):
     context = {
         'story_start': story_start,
         'story_middle': story_middle,
-        'story_end': story_end
+        'story_end': story_end,
+        'story_idea_form': StoryIdeaForm()
     }
 
 
