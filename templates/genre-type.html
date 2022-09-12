@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
 {% load crispy_forms_tags %}
@@ -14,10 +13,11 @@
 {% endblock %}
 {% block script %}
 <!--Script added here instead of externally due to inability to handle Django's 
-                            data otherwise -->
+data otherwise -->
+
 <script>
     document.addEventListener('DOMContentLoaded', event => {
-    let storyStart = `{{ story_start }} {{ story_middle }} {{ story_end }}`;
+    let storyStart = `{{ story_start | safe }} {{ story_middle | safe }} {{ story_end | safe }}`;
     document.getElementById("id_story_text").setAttribute("value", storyStart);
 })
 </script>
