@@ -109,7 +109,7 @@ a i {
 }
 
 .nav-float {
-    margin-left: 10vw;
+    margin-left: 2vw;
     justify-content: right;
 }
 
@@ -165,7 +165,10 @@ a i {
 
 /* generic area used for bordering with container-fluid class */
 .generic-area {
-    border:1px solid var(--light-shade);
+    border-top:1px solid var(--light-shade);
+    border-bottom:1px solid var(--light-shade);
+    border-right:4px solid var(--light-shade);
+    border-left:4px solid var(--light-shade);
     padding-top: 20px;
     padding-bottom: 20px;
 }
