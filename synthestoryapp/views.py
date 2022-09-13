@@ -64,7 +64,8 @@ def get_my_stories_idea(request, id, idea_id):
     story_idea = StoryIdea.objects.get(id = idea_id)
 
     context = {
-        'story_idea': story_idea
+        'story_idea': story_idea,
+        'story_idea_form': StoryIdeaForm()
     }
 
     return render(request, 'story_idea.html', context)

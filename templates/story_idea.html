@@ -2,7 +2,26 @@
 
 {% block content %}
 
-<h1 class="white-text center-text">{{ story_idea.title }}</h1>
-<hr>
-<h2 class="white-text center-text">{{ story_idea.story_text }}</h2>
+{% load crispy_forms_tags %}
+
+<form action="" class="white-text container" method="post">
+    {{ story_idea_form | crispy }}
+    {% csrf_token %}
+    <button type="submit" class="generate-button">Edit Story Idea</button>
+    <button class="generate-button">Delete Story Idea</button>
+</form>
+{% endblock %}
+
+{% block script %}
+<!--Script added here instead of externally due to inability to handle Django's 
+data otherwise -->
+<script>
+    document.addEventListener('DOMContentLoaded', event => {
+    let storyTitle = `{{ story_idea.title }}`;
+    let storyContent = `{{ story_idea.story_text }}`;
+    document.getElementById("id_title").setAttribute("value", storyTitle);
+    document.getElementById("id_story_text").setAttribute("value", storyContent);
+})
+</script>
+
 {% endblock %}
