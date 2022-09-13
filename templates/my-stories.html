@@ -3,9 +3,21 @@
 {% block content %}
 <h1 class="white-text center-text"> {{ request.user.username }}</h1>
 {% if story_ideas %}
-{% for story_idea in story_ideas %}
-<p class="white-text center-text">{{ story_idea }}</p>
-{% endfor %}
+<div class="container">
+    <div class="row">
+        {% for story_idea in story_ideas %}
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="black-text center-text card-title">{{ story_idea.title }}</h3>
+                    <a href="../../story_idea/{{ story_idea.title }}/" class="black-text center-text card-link ">View</a>
+                </div>
+              </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 {% else %}
 <p class="white-text center-text">You don't have any story ideas yet!</p>
 <a href="{% url 'genre-page' %}" class="white-text link center-text"><h2>Click here to start!</h2></a>
