@@ -12,10 +12,11 @@
             <div class="col-xl-4">
                 <img class="genre-image" src="{{ genre.genre_image.url }}" alt="{{ genre.genre_title }}">
             </div>
-            {% if forloop.counter|divisibleby:2 %}
-         </div>
-         <div class="row">
+            {% if forloop.counter|divisibleby:2 and not forloop.counter|divisibleby:forloop.counter.length %}
+        </div>
+        <div class="row">
             {% endif %}
             {% endfor %}
+        </div>
     </div>
 {% endblock %}

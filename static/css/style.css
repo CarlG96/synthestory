@@ -165,7 +165,7 @@ a i {
 
 /* generic area used for bordering with container-fluid class */
 .generic-area {
-    border:5px solid var(--dark-accent);
+    border:1px solid var(--light-shade);
     padding-top: 20px;
     padding-bottom: 20px;
 }
