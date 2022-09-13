@@ -59,9 +59,9 @@ def get_my_stories_page(request, id):
     return render(request, 'my-stories.html', context)
 
 
-def get_my_stories_idea(request, id):
+def get_my_stories_idea(request, id, idea_id):
     
-    story_idea = StoryIdea.objects.all().filter(title = id)
+    story_idea = StoryIdea.objects.all().filter(title=id)
 
     context = {
         'story_idea': story_idea

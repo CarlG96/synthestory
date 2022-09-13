@@ -7,5 +7,5 @@ urlpatterns = [
     path('', get_genre_page, name='genre-page'),
     path('genre-type/<str:id>/', get_genre_type_page, name='genre-type'),
     path('my-stories/<str:id>/', get_my_stories_page, name='my-stories'),
-    path('story_idea/<str:id>/', get_my_stories_idea, name='my-stories-idea')
+    path('my-stories/<str:id>/<str:idea_id>/', get_my_stories_idea, name='my-stories-idea')
 ]
