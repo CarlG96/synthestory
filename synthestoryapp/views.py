@@ -39,11 +39,12 @@ def get_genre_type_page(request, id):
     rand_number_three = random.randrange(0, len(story_ends_list))
     story_end = story_ends_list[rand_number_three]
 
+    initial_data = {
+        'story_text': f'{story_start} {story_middle} {story_end}'
+    }
+    form = StoryIdeaForm(initial=initial_data)
     context = {
-        'story_start': story_start,
-        'story_middle': story_middle,
-        'story_end': story_end,
-        'story_idea_form': StoryIdeaForm()
+        'story_idea_form': form
     }
 
     return render(request, 'genre-type.html', context)
@@ -62,10 +63,17 @@ def get_my_stories_page(request, id):
 def get_my_stories_idea(request, id, idea_id):
     
     story_idea = StoryIdea.objects.get(id = idea_id)
+    print(story_idea)
 
+    initial_data = {
+        'title': f'{story_idea.title}',
+        'story_text': f'{story_idea.story_text}'
+    }
+
+    form = StoryIdeaForm(initial=initial_data)
     context = {
         'story_idea': story_idea,
-        'story_idea_form': StoryIdeaForm()
+        'story_idea_form': form
     }
 
     return render(request, 'story_idea.html', context)

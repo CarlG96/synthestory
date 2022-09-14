@@ -11,17 +11,3 @@
     <button class="generate-button">Delete Story Idea</button>
 </form>
 {% endblock %}
-
-{% block script %}
-<!--Script added here instead of externally due to inability to handle Django's 
-data otherwise -->
-<script>
-    document.addEventListener('DOMContentLoaded', event => {
-    let storyTitle = `{{ story_idea.title }}`;
-    let storyContent = `{{ story_idea.story_text }}`;
-    document.getElementById("id_title").setAttribute("value", storyTitle);
-    document.getElementById("id_story_text").setAttribute("value", storyContent);
-})
-</script>
-
-{% endblock %}

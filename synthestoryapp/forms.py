@@ -8,6 +8,6 @@ class StoryIdeaForm(forms.ModelForm):
         fields = ('title', 'story_text')
         labels = {
             'title': 'Title',
-            'story text': 'Story Idea'
+            'story_text': 'Story Idea'
         }
         
