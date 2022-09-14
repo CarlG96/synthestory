@@ -61,9 +61,14 @@ def get_my_stories_page(request, id):
 
 
 def get_my_stories_idea(request, id, idea_id):
-    
     story_idea = StoryIdea.objects.get(id = idea_id)
-    print(story_idea)
+    if request.method == 'POST':
+        form = StoryIdeaForm(request.POST, instance = story_idea)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    
+    # story_idea = StoryIdea.objects.get(id = idea_id)
 
     initial_data = {
         'title': f'{story_idea.title}',
