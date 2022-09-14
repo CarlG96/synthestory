@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Genre, StoryStart, StoryMiddle, StoryEnd, StoryIdea
 from .forms import StoryIdeaForm
 import random
@@ -83,6 +83,11 @@ def get_my_stories_idea(request, id, idea_id):
 
     return render(request, 'story_idea.html', context)
 
-
+def delete_my_stories_idea(request, id, idea_id):
+    story_idea = get_object_or_404(StoryIdea, id = idea_id)
+    
+    story_idea.delete()
+    
+    return redirect('home')
     
     

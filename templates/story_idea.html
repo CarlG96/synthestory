@@ -8,6 +8,7 @@
     {{ story_idea_form | crispy }}
     {% csrf_token %}
     <button type="submit" class="generate-button">Edit Story Idea</button>
-    <button class="generate-button">Delete Story Idea</button>
+    
 </form>
+<a href="/delete/{{user.id}}/{{story_idea.id}}/"><button class="generate-button">Delete Story Idea</button></a>
 {% endblock %}
