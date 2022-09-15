@@ -34,25 +34,25 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a href="{% url 'home' %}" class="nav-link white-text link center-text nav-float"><h2>Home</h2></a>
+                        <a href="{% url 'home' %}" class="nav-link white-text link center-text nav-float"><h3>Home</h2></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="{% url 'genre-page' %}" class="nav-link white-text link center-text nav-float"><h3>Create Idea</h2></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="/my-stories/{{user.id}}" class="nav-link white-text link center-text nav-float"><h3>My Stories</h2></a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item active">
-                        <a href="{% url 'genre-page' %}" class="nav-link white-text link center-text nav-float"><h2>Create Idea</h2></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a href="/my-stories/{{user.id}}" class="nav-link white-text link center-text nav-float"><h2>My Stories</h2></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a href="{% url 'account_logout' %}" class="nav-link white-text link center-text nav-float"><h2>Logout</h2></a>
+                        <a href="{% url 'account_logout' %}" class="nav-link white-text link center-text nav-float"><h3>Logout</h2></a>
                     </li>
                     {% else %}
                     <li class="nav-item active">
-                        <a href="{% url 'account_login' %}" class="nav-link white-text link center-text nav-float"><h2>Login</h2></a>
+                        <a href="{% url 'account_login' %}" class="nav-link white-text link center-text nav-float"><h3>Login</h2></a>
                     </li>
                 
                     <li class="nav-item active">
-                        <a href="{% url 'account_signup' %}" class="nav-link white-text link center-text nav-float"><h2>Signup</h2></a>
+                        <a href="{% url 'account_signup' %}" class="nav-link white-text link center-text nav-float"><h3>Signup</h2></a>
                     </li>
                     {% endif %}
                 </ul>
