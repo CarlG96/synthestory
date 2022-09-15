@@ -171,6 +171,7 @@ a i {
     border-left:4px solid var(--light-shade);
     padding-top: 20px;
     padding-bottom: 20px;
+    min-height: 70vh;
 }
 
 /* media queries for Genre page */

@@ -3,7 +3,7 @@
 {% block content %}
 <h1 class="white-text center-text"> {{ request.user.username }}</h1>
 {% if story_ideas %}
-<div class="container">
+<div class="container-fluid generic-area">
     <div class="row">
         {% for story_idea in story_ideas %}
         <div class="col-md-4 mt-3">

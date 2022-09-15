@@ -3,12 +3,16 @@
 {% block content %}
 
 {% load crispy_forms_tags %}
-
-<form action="" class="white-text container" method="post">
-    {{ story_idea_form | crispy }}
-    {% csrf_token %}
-    <button type="submit" class="generate-button">Edit Story Idea</button>
-    
-</form>
-<a href="/delete/{{user.id}}/{{story_idea.id}}/"><button class="generate-button">Delete Story Idea</button></a>
+<div class="container-fluid generic-area">
+            <div class="container">
+                
+                        <form action="" class="white-text" method="post">
+                            {{ story_idea_form | crispy }}
+                            {% csrf_token %}
+                            <button type="submit" class="generate-button mt-3">Edit Story Idea</button>
+                        </form>
+                <a href="/delete/{{user.id}}/{{story_idea.id}}/"><button class="generate-button mt-3 ">Delete Story
+                        Idea</button></a>
+            </div>
+</div>
 {% endblock %}
