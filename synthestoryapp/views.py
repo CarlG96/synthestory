@@ -5,7 +5,7 @@ import random
 
 
 def get_home_page(request):
-    return render(request, 'home.html')
+    return render(request, 'index.html')
 
 def get_genre_page(request):
     genres = Genre.objects.all()
@@ -20,7 +20,7 @@ def get_genre_type_page(request, id):
         story_text = request.POST.get('story_text')
         StoryIdea.objects.create(title=title, story_text=story_text, user=request.user)
 
-        return render(request, 'home.html')
+        return render(request, 'index.html')
     # creates a random sentence that relates to the currently selected genre
     # can be redone with better code
 

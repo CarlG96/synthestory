@@ -68,6 +68,10 @@ hr {
     color: var(--main-brand);
 }
 
+.light-text {
+    color: var(--light-accent);
+}
+
 /* Spacing */
 
 a i {
@@ -87,10 +91,22 @@ a i {
     color: var(--main-brand);
 }
 
+.special-link {
+    text-decoration: underline;
+}
+
+.special-link:hover {
+    color: var(--main-brand);
+    transition: all color 0.5s ease-out;
+}
+
+.special-link:focus {
+    color: var(--main-brand);
+}
+
 .footer {
     padding-top: 10px;
-    padding-bottom: 10px;
-    
+    padding-bottom: 10px; 
     margin-bottom: 10px;
 }
 
@@ -192,6 +208,14 @@ a i {
         margin-top: 0;
     }
 }
+
+/* Text for landing page */
+.responsive-text p{
+    font-size: 1.5rem;
+}
+
+
+
 
 
 
