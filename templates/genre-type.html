@@ -3,13 +3,17 @@
 
 {% load crispy_forms_tags %}
 
-
-<form action="" class="white-text container" method="post">
-    {{ story_idea_form | crispy }}
-    {% csrf_token %}
-    <button type="submit" class="generate-button">Submit</button>
-    <!--Redirects to same page-->
-    <button type="button" class="generate-button"><a href="{{ request.path }}">Generate Another Idea!</a></button>
-</form>
+<div class="container-fluid generic-area">
+    <div class="container">
+        <form action="" class="white-text container" method="post">
+            {{ story_idea_form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="generate-button mt-3">Submit</button>
+            <!--Redirects to same page-->
+            <button type="button" class="generate-button mt-3"><a href="{{ request.path }}">Generate Another
+                    Idea!</a></button>
+        </form>
+    </div>
+</div>
 
 {% endblock %}
