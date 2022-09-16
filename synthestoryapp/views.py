@@ -52,54 +52,50 @@ def get_genre_type_page(request, id):
 
     return render(request, 'genre-type.html', context)
 
-@login_required
+# login required decorator not used due to redirecting to a url with
+# 'None' in if 'My Stories' clicked on
 def get_my_stories_page(request, id):
     # Prevents user from accessing other users stories
-    current_user = User.objects.get(id=request.user.pk)
-    if current_user.id == request.user.id:
-        if request.user.is_authenticated:
+    if request.user.is_authenticated:
 
-            story_ideas = StoryIdea.objects.all().filter(user = current_user.id)
-
-            context = {
-                'story_ideas': story_ideas
-            }
-            return render(request, 'my-stories.html', context)
+        story_ideas = StoryIdea.objects.all().filter(user = request.user.id)
+            
+        context = {
+            'story_ideas': story_ideas
+        }
+        return render(request, 'my-stories.html', context)
 
     else: 
         # returns user to homepage if they try to access other user's stories
-        return redirect('home')
+        return redirect('account_login')
 
 @login_required
 def get_my_stories_idea(request, id, idea_id):
+   
 
-    # Prevents user from accessing other users stories
-    current_user = User.objects.get(id=request.user.pk)
-    if current_user.id == request.user.pk:
+    story_idea = StoryIdea.objects.get(id = idea_id)
+    if request.method == 'POST':
+        form = StoryIdeaForm(request.POST, instance = story_idea)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
 
-        story_idea = StoryIdea.objects.get(id = idea_id)
-        if request.method == 'POST':
-            form = StoryIdeaForm(request.POST, instance = story_idea)
-            if form.is_valid():
-                form.save()
-                return redirect('home')
+    initial_data = {
+        'title': f'{story_idea.title}',
+        'story_text': f'{story_idea.story_text}'
+    }
 
-        initial_data = {
-            'title': f'{story_idea.title}',
-            'story_text': f'{story_idea.story_text}'
-        }
+    form = StoryIdeaForm(initial=initial_data)
+    context = {
+        'story_idea': story_idea,
+        'story_idea_form': form
+    }
 
-        form = StoryIdeaForm(initial=initial_data)
-        context = {
-            'story_idea': story_idea,
-            'story_idea_form': form
-        }
+    return render(request, 'story_idea.html', context)
 
-        return render(request, 'story_idea.html', context)
-
-    else: 
+    # else: 
         # returns user to homepage if they try to access other user's stories
-        return redirect('home')
+        # return redirect('home')
 
 
 @login_required
