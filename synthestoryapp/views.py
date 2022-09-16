@@ -54,17 +54,17 @@ def get_genre_type_page(request, id):
 
 @login_required
 def get_my_stories_page(request, id):
-
     # Prevents user from accessing other users stories
-    current_user = User.objects.get(id=id)
-    if current_user.id == request.user.pk:
+    current_user = User.objects.get(id=request.user.pk)
+    if current_user.id == request.user.id:
+        if request.user.is_authenticated:
 
-        story_ideas = StoryIdea.objects.all().filter(user = id)
+            story_ideas = StoryIdea.objects.all().filter(user = current_user.id)
 
-        context = {
-            'story_ideas': story_ideas
-        }
-        return render(request, 'my-stories.html', context)
+            context = {
+                'story_ideas': story_ideas
+            }
+            return render(request, 'my-stories.html', context)
 
     else: 
         # returns user to homepage if they try to access other user's stories
@@ -74,7 +74,7 @@ def get_my_stories_page(request, id):
 def get_my_stories_idea(request, id, idea_id):
 
     # Prevents user from accessing other users stories
-    current_user = User.objects.get(id=id)
+    current_user = User.objects.get(id=request.user.pk)
     if current_user.id == request.user.pk:
 
         story_idea = StoryIdea.objects.get(id = idea_id)
