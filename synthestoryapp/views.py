@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Genre, StoryStart, StoryMiddle, StoryEnd, StoryIdea
 from .forms import StoryIdeaForm
+from django.contrib.auth.decorators import login_required
 import random
 
 
 def get_home_page(request):
     return render(request, 'index.html')
 
+@login_required
 def get_genre_page(request):
     genres = Genre.objects.all()
     context = {
@@ -14,6 +16,7 @@ def get_genre_page(request):
     }
     return render(request, 'genre-page.html', context)
 
+@login_required
 def get_genre_type_page(request, id):
     if request.method == 'POST':
         title = request.POST.get('title')
@@ -49,7 +52,7 @@ def get_genre_type_page(request, id):
 
     return render(request, 'genre-type.html', context)
 
-
+@login_required
 def get_my_stories_page(request, id):
 
     story_ideas = StoryIdea.objects.all().filter(user = id)
@@ -59,7 +62,7 @@ def get_my_stories_page(request, id):
     }
     return render(request, 'my-stories.html', context)
 
-
+@login_required
 def get_my_stories_idea(request, id, idea_id):
     story_idea = StoryIdea.objects.get(id = idea_id)
     if request.method == 'POST':
@@ -83,6 +86,7 @@ def get_my_stories_idea(request, id, idea_id):
 
     return render(request, 'story_idea.html', context)
 
+@login_required
 def delete_my_stories_idea(request, id, idea_id):
     story_idea = get_object_or_404(StoryIdea, id = idea_id)
     
