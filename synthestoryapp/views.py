@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Genre, StoryStart, StoryMiddle, StoryEnd, StoryIdea
+from .models import Genre, StoryStart, StoryMiddle, StoryEnd, StoryIdea, User
 from .forms import StoryIdeaForm
 from django.contrib.auth.decorators import login_required
 import random
@@ -55,36 +55,52 @@ def get_genre_type_page(request, id):
 @login_required
 def get_my_stories_page(request, id):
 
-    story_ideas = StoryIdea.objects.all().filter(user = id)
+    # Prevents user from accessing other users stories
+    current_user = User.objects.get(id=id)
+    if current_user.id == request.user.pk:
 
-    context = {
-        'story_ideas': story_ideas
-    }
-    return render(request, 'my-stories.html', context)
+        story_ideas = StoryIdea.objects.all().filter(user = id)
+
+        context = {
+            'story_ideas': story_ideas
+        }
+        return render(request, 'my-stories.html', context)
+
+    else: 
+        # returns user to homepage if they try to access other user's stories
+        return redirect('home')
 
 @login_required
 def get_my_stories_idea(request, id, idea_id):
-    story_idea = StoryIdea.objects.get(id = idea_id)
-    if request.method == 'POST':
-        form = StoryIdeaForm(request.POST, instance = story_idea)
-        if form.is_valid():
-            form.save()
-            return redirect('home')
-    
-    # story_idea = StoryIdea.objects.get(id = idea_id)
 
-    initial_data = {
-        'title': f'{story_idea.title}',
-        'story_text': f'{story_idea.story_text}'
-    }
+    # Prevents user from accessing other users stories
+    current_user = User.objects.get(id=id)
+    if current_user.id == request.user.pk:
 
-    form = StoryIdeaForm(initial=initial_data)
-    context = {
-        'story_idea': story_idea,
-        'story_idea_form': form
-    }
+        story_idea = StoryIdea.objects.get(id = idea_id)
+        if request.method == 'POST':
+            form = StoryIdeaForm(request.POST, instance = story_idea)
+            if form.is_valid():
+                form.save()
+                return redirect('home')
 
-    return render(request, 'story_idea.html', context)
+        initial_data = {
+            'title': f'{story_idea.title}',
+            'story_text': f'{story_idea.story_text}'
+        }
+
+        form = StoryIdeaForm(initial=initial_data)
+        context = {
+            'story_idea': story_idea,
+            'story_idea_form': form
+        }
+
+        return render(request, 'story_idea.html', context)
+
+    else: 
+        # returns user to homepage if they try to access other user's stories
+        return redirect('home')
+
 
 @login_required
 def delete_my_stories_idea(request, id, idea_id):
