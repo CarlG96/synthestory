@@ -56,7 +56,9 @@ def get_genre_type_page(request, id):
 # 'None' in if 'My Stories' clicked on
 def get_my_stories_page(request, id):
     # Prevents user from accessing other users stories
-    if request.user.is_authenticated:
+    print(id)
+    print(request.user.id)
+    if request.user.is_authenticated and str(request.user.id) == id:
 
         story_ideas = StoryIdea.objects.all().filter(user = request.user.id)
             
@@ -72,30 +74,30 @@ def get_my_stories_page(request, id):
 @login_required
 def get_my_stories_idea(request, id, idea_id):
    
+    if request.user.is_authenticated and str(request.user.id) == id:
+        story_idea = StoryIdea.objects.get(id = idea_id)
+        if request.method == 'POST':
+            form = StoryIdeaForm(request.POST, instance = story_idea)
+            if form.is_valid():
+                form.save()
+                return redirect('home')
 
-    story_idea = StoryIdea.objects.get(id = idea_id)
-    if request.method == 'POST':
-        form = StoryIdeaForm(request.POST, instance = story_idea)
-        if form.is_valid():
-            form.save()
-            return redirect('home')
+        initial_data = {
+            'title': f'{story_idea.title}',
+            'story_text': f'{story_idea.story_text}'
+        }
 
-    initial_data = {
-        'title': f'{story_idea.title}',
-        'story_text': f'{story_idea.story_text}'
-    }
+        form = StoryIdeaForm(initial=initial_data)
+        context = {
+            'story_idea': story_idea,
+            'story_idea_form': form
+        }
 
-    form = StoryIdeaForm(initial=initial_data)
-    context = {
-        'story_idea': story_idea,
-        'story_idea_form': form
-    }
+        return render(request, 'story_idea.html', context)
 
-    return render(request, 'story_idea.html', context)
-
-    # else: 
+    else: 
         # returns user to homepage if they try to access other user's stories
-        # return redirect('home')
+        return redirect('account_login')
 
 
 @login_required
