@@ -66,6 +66,9 @@
     {% endblock %}
 
     <footer>
+        {% if user.is_authenticated %}
+        <p class="white-text center-text mt-2">Logged in as {{ user.username }}</p>
+        {% endif %}
         <p class="white-text center-text mt-2">Follow Us:</p>
         <div class="container-fluid black-background white-text center-text footer">
             <div class="row">

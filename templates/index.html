@@ -23,7 +23,11 @@
     <div class="row mt-3">
         <div class="col-xl-2"></div>
         <div class="col-xl-2"><h1 class="main-logo">Step 1</h1></div>
+        {% if not user.is_authenticated %}
         <div class="col-xl-6"><p>Start by signing up for an account here: <a href="{% url 'account_signup' %}" class="white-text special-link">Account Signup</a></p></div>
+        {% else %}
+        <div class="col-xl-6"><p>You've already completed this step by logging in!</p></div>
+        {% endif %}
     </div>
     <hr>
     <div class="row mt-3">
