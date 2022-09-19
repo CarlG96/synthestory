@@ -4,15 +4,30 @@
 
 {% load crispy_forms_tags %}
 <div class="container-fluid generic-area">
-            <div class="container">
-                
-                        <form action="" class="white-text" method="post">
-                            {{ story_idea_form | crispy }}
-                            {% csrf_token %}
-                            <button type="submit" class="generate-button mt-3">Edit Story Idea</button>
-                        </form>
-                <a href="/delete/{{user.id}}/{{story_idea.id}}/"><button class="generate-button mt-3 ">Delete Story
-                        Idea</button></a>
+    <div class="container">
+
+        <form action="" class="white-text" method="post">
+            {{ story_idea_form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="generate-button mt-3">Edit Story Idea</button>
+        </form>
+        <div class="accordion" id="deleteAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="delete">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseDelete" aria-expanded="false" aria-controls="collapseDelete">
+                        Delete Item
+                    </button>
+                </h2>
+                <div id="collapseDelete" class="accordion-collapse collapse" aria-labelledby="delete"
+                    data-bs-parent="#deleteAccordion">
+                    <div class="accordion-body">
+                        <a href="/delete/{{user.id}}/{{story_idea.id}}/"><button class="generate-button mt-3">Delete Story
+                            Idea</button></a>
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
