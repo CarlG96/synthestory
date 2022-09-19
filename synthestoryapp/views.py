@@ -23,7 +23,14 @@ def get_genre_type_page(request, id):
         story_text = request.POST.get('story_text')
         StoryIdea.objects.create(title=title, story_text=story_text, user=request.user)
 
-        return render(request, 'index.html')
+        # repeated elsewhere
+        story_ideas = StoryIdea.objects.all().filter(user = request.user.id)
+            
+        context = {
+            'story_ideas': story_ideas
+        }
+
+        return render(request, 'my-stories.html', context)
     # creates a random sentence that relates to the currently selected genre
     # can be redone with better code
 
@@ -73,14 +80,22 @@ def get_my_stories_page(request, id):
 
 @login_required
 def get_my_stories_idea(request, id, idea_id):
-   
+    
+    # code for editing story
     if request.user.is_authenticated and str(request.user.id) == id:
         story_idea = StoryIdea.objects.get(id = idea_id)
         if request.method == 'POST':
             form = StoryIdeaForm(request.POST, instance = story_idea)
             if form.is_valid():
                 form.save()
-                return redirect('home')
+                # repeated elsewhere
+                story_ideas = StoryIdea.objects.all().filter(user = request.user.id)
+            
+                context = {
+                'story_ideas': story_ideas
+                }
+
+                return render(request, 'my-stories.html', context)
 
         initial_data = {
             'title': f'{story_idea.title}',
@@ -106,6 +121,12 @@ def delete_my_stories_idea(request, id, idea_id):
     
     story_idea.delete()
     
-    return redirect('home')
+    story_ideas = StoryIdea.objects.all().filter(user = request.user.id)
+            
+    context = {
+    'story_ideas': story_ideas
+    }
+
+    return render(request, 'my-stories.html', context)
     
     
