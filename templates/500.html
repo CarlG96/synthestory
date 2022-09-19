@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid white-text responsive-text generic-area">
+    <h1>500 Internal Server Error</h1>
+    <p>Sorry, an internal error has occurred!</p>
+    <button type="button" class="generate-button mt-3"><a href="{% url 'home' %}">Return to Home Page</a></button>
+</div>
+
+{% endblock %}

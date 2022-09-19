@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid white-text responsive-text generic-area">
+    <h1>404 page not found</h1>
+    <p>Unfortunately, we could not find the page you requested.</p>
+    <button type="button" class="generate-button mt-3"><a href="{% url 'home' %}">Return to Home Page</a></button>
+</div>
+
+{% endblock %}
