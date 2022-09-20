@@ -173,6 +173,11 @@ a i {
     text-decoration: none;
 }
 
+.generate-button:hover, .generate-button:focus {
+    color: var(--main-brand);
+    transition: all color 0.5s ease-out;
+}
+
 .generate-button a:hover, .generate-button a:focus {
     color: var(--main-brand);
     transition: all color 0.5s ease-out;
@@ -209,14 +214,8 @@ a i {
     font-size: 1.8rem;
 }
 
-.delete-button a {
-    color: var(--light-shade);
-    background-color: var(--dark-shade);
-    text-decoration: none;
-}
-
-.delete-button a:hover, .delete-button a:focus {
-    color: var(--main-brand);
+.delete-button:hover, .delete-button:focus {
+    color: var(--dark-shade);
     transition: all color 0.5s ease-out;
 }
 
