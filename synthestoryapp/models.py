@@ -59,7 +59,7 @@ class StoryIdea(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ['-creation_date']
+        ordering = ['-updated_on']
 
     def __str__(self):
         return self.title
