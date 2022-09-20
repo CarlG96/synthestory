@@ -4,15 +4,25 @@
     <div class="container-fluid generic-area">
         <div class="row">
             {% for genre in genres %}
-            <div class="col-xl-2">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img class="genre-image img-fluid rounded-start" src="{{ genre.genre_image.url }}" alt="{{ genre.genre_title }}">
+                    <div class="card-body">
+                        <h2 class="card-title black-text inline-text">{{ genre.genre_title }}</h2>
+                        <p class="black-text card-text genre-paragraph-text">{{ genre.genre_description }}</p>
+                        <button type="button" class="generate-button"><a href="/genre-type/{{ genre.id }}/">Generate {{ genre.genre_title }} Idea!</a></button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-xl-2">
                 <h2 class="white-text inline-text">{{ genre.genre_title }}</h2>
                 <p class="white-text genre-paragraph-text">{{ genre.genre_description }}</p>
                 <button type="button" class="generate-button"><a href="/genre-type/{{ genre.id }}/">Generate {{ genre.genre_title }} Idea!</a></button>
             </div>
             <div class="col-xl-4">
                 <img class="genre-image" src="{{ genre.genre_image.url }}" alt="{{ genre.genre_title }}">
-            </div>
-            {% if forloop.counter|divisibleby:2 and not forloop.counter|divisibleby:forloop.counter.length %}
+            </div> -->
+            {% if forloop.counter|divisibleby:3 and not forloop.counter|divisibleby:forloop.counter.length %}
         </div>
         <div class="row">
             {% endif %}
