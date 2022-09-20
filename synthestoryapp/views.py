@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Genre, StoryStart, StoryMiddle, StoryEnd, StoryIdea, User
 from .forms import StoryIdeaForm
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 import random
 
 
@@ -21,6 +22,7 @@ def get_genre_type_page(request, id):
     if request.method == 'POST':
         title = request.POST.get('title')
         story_text = request.POST.get('story_text')
+        messages.add_message(request, messages.SUCCESS, f'Successfully added story idea: {title}.')
         StoryIdea.objects.create(title=title, story_text=story_text, user=request.user)
 
         # repeated elsewhere
@@ -88,6 +90,8 @@ def get_my_stories_idea(request, id, idea_id):
             form = StoryIdeaForm(request.POST, instance = story_idea)
             if form.is_valid():
                 form.save()
+                title = request.POST.get('title')
+                messages.add_message(request, messages.WARNING, f'Successfully edited story idea: {title}.')
                 # repeated elsewhere
                 story_ideas = StoryIdea.objects.all().filter(user = request.user.id)
             
@@ -118,9 +122,9 @@ def get_my_stories_idea(request, id, idea_id):
 @login_required
 def delete_my_stories_idea(request, id, idea_id):
     story_idea = get_object_or_404(StoryIdea, id = idea_id)
-    
+    title = story_idea.title
     story_idea.delete()
-    
+    messages.add_message(request, messages.ERROR, f'Successfully deleted story idea: {title}.')
     story_ideas = StoryIdea.objects.all().filter(user = request.user.id)
             
     context = {
