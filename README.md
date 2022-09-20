@@ -26,6 +26,10 @@ The StoryStart, StoryMiddle and StoryEnd Models are very similar and could have 
 
 ### StoryIdea Model
 
+The StoryIdea Model represents a saved story idea that is connected to a user. This is used to present the user with their story ideas and allow them to edit and delete them as needs be. Each StoryIdea instance contains a user(foreign key connected to User), title, story text and a creation date and updated on date. The title and story text fields are used to display information on the frontend and the creation date is used to refer to when it was created and the updated on date is used to control te order that the story ideas are presented to the user in their My Stories page.
+
+### Entity Relationship Diagram
+
 
 
 ## Imported Modules, Installed Apps

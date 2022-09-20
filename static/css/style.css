@@ -9,6 +9,7 @@
     --main-brand: #82a127;
     --dark-accent: #734f36;
     --dark-shade: #312834;
+    --red: #b60a0a;
 }
 
 * {
@@ -153,9 +154,8 @@ a i {
     text-align: left;
 }
 
+/* For buttons that generate, edit, save etc */
 .generate-button {
-    margin-left: 20px;
-    margin-right: 20px;
     text-decoration: none;
     color: var(--light-shade);
     background-color: var(--dark-shade);
@@ -175,6 +175,32 @@ a i {
 }
 
 .generate-button a:hover, .generate-button a:focus {
+    color: var(--main-brand);
+    transition: all color 0.5s ease-out;
+}
+
+/* For delete button */
+
+.delete-button {
+    text-decoration: none;
+    color: var(--light-shade);
+    background-color: var(--red);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-top-left-radius: 10px 30px;
+    border-bottom-right-radius: 10px 30px;
+    border-color: var(--red);
+    border-width: 5px;
+    font-size: 1.8rem;
+}
+
+.delete-button a {
+    color: var(--light-shade);
+    background-color: var(--dark-shade);
+    text-decoration: none;
+}
+
+.delete-button a:hover, .delete-button a:focus {
     color: var(--main-brand);
     transition: all color 0.5s ease-out;
 }
