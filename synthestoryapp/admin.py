@@ -1,3 +1,8 @@
+"""
+Code for registering models to the
+admin site for CRUD functionality for
+the admin.
+"""
 from django.contrib import admin
 from .models import Genre, StoryStart, StoryMiddle, StoryEnd, StoryIdea
 
