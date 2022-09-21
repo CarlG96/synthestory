@@ -5,9 +5,16 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 import random
 
+def random_story_part(model_list, id_number):
+    story_parts = model_list.objects.all().filter(genre=id_number)
+    story_list = list(story_parts)
+    rand_number = random.randrange(0, len(story_list))
+    story_part = story_list[rand_number]
+    return story_part
 
 def get_home_page(request):
     return render(request, 'index.html')
+
 
 @login_required
 def get_genre_page(request):
@@ -16,6 +23,7 @@ def get_genre_page(request):
         'genres': genres
     }
     return render(request, 'genre-page.html', context)
+
 
 @login_required
 def get_genre_type_page(request, id):
@@ -35,22 +43,11 @@ def get_genre_type_page(request, id):
         return render(request, 'my-stories.html', context)
     # creates a random sentence that relates to the currently selected genre
     # can be redone with better code
-
-    story_starts = models.StoryStart.objects.all().filter(genre=id)
-    story_starts_list = list(story_starts)
-    rand_number = random.randrange(0, len(story_starts_list))
-    story_start = story_starts_list[rand_number]
-
-    story_middles = models.StoryMiddle.objects.all().filter(genre=id)
-    story_middles_list = list(story_middles)
-    rand_number_two = random.randrange(0, len(story_middles_list))
-    story_middle = story_middles_list[rand_number_two]
-
-    story_ends = models.StoryEnd.objects.all().filter(genre=id)
-    story_ends_list = list(story_ends)
-    rand_number_three = random.randrange(0, len(story_ends_list))
-    story_end = story_ends_list[rand_number_three]
-
+    
+    story_start = random_story_part(models.StoryStart, id)
+    story_middle = random_story_part(models.StoryMiddle, id)
+    story_end = random_story_part(models.StoryEnd, id)
+    
     initial_data = {
         'story_text': f'{story_start} {story_middle} {story_end}'
     }
@@ -63,6 +60,8 @@ def get_genre_type_page(request, id):
 
 # login required decorator not used due to redirecting to a url with
 # 'None' in if 'My Stories' clicked on
+
+
 def get_my_stories_page(request, id):
     # Prevents user from accessing other users stories
     print(id)
@@ -79,6 +78,7 @@ def get_my_stories_page(request, id):
     else: 
         # returns user to homepage if they try to access other user's stories
         return redirect('account_login')
+
 
 @login_required
 def get_my_stories_idea(request, id, idea_id):
