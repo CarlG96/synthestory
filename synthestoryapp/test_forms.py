@@ -1,5 +1,5 @@
 """
-Code for testing forms in Django
+Code for testing forms in Django.
 """
 from django.test import TestCase
 from .forms import StoryIdeaForm
