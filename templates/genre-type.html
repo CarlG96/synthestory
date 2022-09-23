@@ -10,8 +10,10 @@
             {% csrf_token %}
             <button type="submit" class="generate-button mt-3">Submit</button>
             <!--Redirects to same page-->
-            <button type="button" class="generate-button mt-3"><a href="{{ request.path }}">Generate Another
-                    Idea!</a></button>
+            <div>
+                <a class="generate-button mt-3" href="{{ request.path }}">Generate Another
+                    Idea!</a>
+            </div>
         </form>
     </div>
 </div>

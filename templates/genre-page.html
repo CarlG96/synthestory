@@ -1,24 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="container-fluid generic-area">
-        <div class="row">
-            {% for genre in genres %}
-            <div class="col-md-4">
-                <div class="card genre mb-4">
-                    <img class="genre-image img-fluid rounded-start" src="{{ genre.genre_image.url }}" alt="{{ genre.genre_title }}">
-                    <div class="card-body">
-                        <h2 class="card-title black-text inline-text">{{ genre.genre_title }}</h2>
-                        <p class="black-text card-text genre-paragraph-text">{{ genre.genre_description }}</p>
-                        <a class="generate-button" href="/genre-type/{{ genre.id }}/">Generate {{ genre.genre_title }} Idea!</a>
-                    </div>
+<div class="container-fluid generic-area">
+    <div class="row">
+        {% for genre in genres %}
+        <div class="col-md-4">
+            <div class="card genre mb-4">
+                <img class="genre-image img-fluid rounded-start" src="{{ genre.genre_image.url }}"
+                    alt="{{ genre.genre_title }}">
+                <div class="card-body">
+                    <h2 class="card-title black-text inline-text">{{ genre.genre_title }}</h2>
+                    <p class="black-text card-text genre-paragraph-text">{{ genre.genre_description }}</p>
+                    <a class="generate-button" href="/genre-type/{{ genre.id }}/">Generate {{ genre.genre_title }}
+                        Idea!</a>
                 </div>
             </div>
-            {% if forloop.counter|divisibleby:3 and not forloop.counter|divisibleby:forloop.counter.length %}
         </div>
-        <div class="row">
-            {% endif %}
-            {% endfor %}
-        </div>
+        {% if forloop.counter|divisibleby:3 and not forloop.counter|divisibleby:forloop.counter.length %}
     </div>
+    <div class="row">
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

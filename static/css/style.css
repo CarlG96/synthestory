@@ -166,7 +166,9 @@ a i {
     border-color: var(--main-brand);
     border: 5px solid var(--main-brand);
     font-size: 1.8rem;
+    display: inline-block;
 }
+
 
 
 .generate-button:hover, .generate-button:focus {
@@ -199,11 +201,13 @@ a i {
     background-color: var(--red);
     margin-top: 15px;
     margin-bottom: 15px;
+    padding: 3px;
     border-top-left-radius: 10px 30px;
     border-bottom-right-radius: 10px 30px;
     border-color: var(--red);
-    border-width: 5px;
+    border: solid 5px var(--red);
     font-size: 1.8rem;
+    display: inline-block;
 }
 
 .delete-button:hover, .delete-button:focus {
