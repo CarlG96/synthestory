@@ -12,9 +12,9 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'index.html')
     
-    def test_get_genre_page(self):
-        response = self.client.get('/genre-page')
-        self.assertEqual(response.status_code, 200)
+    # def test_get_genre_page(self):
+    #     response = self.client.get('/genre-page')
+    #     self.assertEqual(response.status_code, 200)
 
     # def test_get_type_page(self):
 
