@@ -160,28 +160,20 @@ a i {
     background-color: var(--dark-shade);
     margin-top: 15px;
     margin-bottom: 15px;
+    padding: 3px;
     border-top-left-radius: 10px 30px;
     border-bottom-right-radius: 10px 30px;
     border-color: var(--main-brand);
-    border-width: 5px;
+    border: 5px solid var(--main-brand);
     font-size: 1.8rem;
 }
 
-.generate-button a {
-    color: var(--light-shade);
-    background-color: var(--dark-shade);
-    text-decoration: none;
-}
 
 .generate-button:hover, .generate-button:focus {
     color: var(--main-brand);
     transition: all color 0.5s ease-out;
 }
 
-.generate-button a:hover, .generate-button a:focus {
-    color: var(--main-brand);
-    transition: all color 0.5s ease-out;
-}
 
 
 .card.genre {
