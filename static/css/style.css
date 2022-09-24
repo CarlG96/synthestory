@@ -1,7 +1,6 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Sail&display=swap');
 
-
 /* Colors */
 :root {
     --light-shade: #faf7f7;
@@ -12,6 +11,7 @@
     --red: #b60a0a;
 }
 
+/* All */
 * {
     font-family: 'Roboto', 'sans-serif';
 }
@@ -24,6 +24,7 @@ hr {
     border: 4px solid var(--light-shade);
 }
 
+/* Main Logo */
 .main-logo {
     color: var(--main-brand);
     font-family: 'Sail', 'Roboto', 'sans-serif';
@@ -37,6 +38,7 @@ hr {
     }
 }
 
+/* Backgrounds */
 .black-background {
     background-color: var(--dark-shade);
 }
@@ -57,6 +59,7 @@ hr {
     background-color: var(--dark-accent);
 }
 
+/* Texts */
 .white-text {
     color: var(--light-shade);
 }
@@ -73,8 +76,7 @@ hr {
     color: var(--light-accent);
 }
 
-/* Spacing */
-
+/* Links */
 a i {
     font-size: 300%;
 }
@@ -85,7 +87,7 @@ a i {
 
 .link:hover {
     color: var(--main-brand);
-    transition: all color 0.5s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 .link:focus {
@@ -98,7 +100,7 @@ a i {
 
 .special-link:hover {
     color: var(--main-brand);
-    transition: all color 0.5s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 .special-link:focus {
@@ -112,7 +114,7 @@ a i {
 }
 
 .social-media-border {
-    padding:10px;
+    padding: 10px;
     border-radius: 10px;
     border: 5px solid var(--main-brand);
 }
@@ -129,6 +131,7 @@ a i {
     margin-left: 1.8vw;
     justify-content: right;
 }
+
 /* Genre page */
 .genre-image {
     width: 100%;
@@ -145,15 +148,13 @@ a i {
     text-align: left;
 }
 
-
-
 .genre-paragraph-text {
     margin-left: 20px;
     margin-right: 20px;
     text-align: left;
 }
 
-/* For buttons that generate, edit, save etc */
+/* For standard buttons, most commonly for generation */
 .generate-button {
     text-decoration: none;
     color: var(--light-shade);
@@ -169,15 +170,12 @@ a i {
     display: inline-block;
 }
 
-
-
 .generate-button:hover, .generate-button:focus {
     color: var(--main-brand);
-    transition: all color 0.5s ease-out;
+    transition: all 0.2s ease-out;
 }
 
-
-
+/* For cards in Genre page */
 .card.genre {
     min-height: 65vh;
 }
@@ -193,8 +191,8 @@ a i {
         min-height: 20vh;
     }
 }
-/* For delete button */
 
+/* For delete button */
 .delete-button {
     text-decoration: none;
     color: var(--light-shade);
@@ -204,7 +202,6 @@ a i {
     padding: 3px;
     border-top-left-radius: 10px 30px;
     border-bottom-right-radius: 10px 30px;
-    border-color: var(--red);
     border: solid 5px var(--red);
     font-size: 1.8rem;
     display: inline-block;
@@ -212,7 +209,7 @@ a i {
 
 .delete-button:hover, .delete-button:focus {
     color: var(--dark-shade);
-    transition: all color 0.5s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 /* generic area used for bordering with container-fluid class */
