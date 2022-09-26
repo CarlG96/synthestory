@@ -146,7 +146,25 @@ Here are a list of manual tests that have been carried out to ensure that Synthe
     * Result: The images display value is set to 'none' but the 'cards' still contain the text and links.
 
 ## Generate/ Genre Type Page Testing
+* The 'Generate/ Genre Type' is accessible from the 'Create Idea/ Genre Page' and should be accessible once logged in.
+    
+    * Test: The 'Generate/ Genre Type' page is accessible from one of many links in the 'Create Idea/ Genre Page' and can be accessed once logged in.
+    * Result: The user is able to click on this link and be directed to the correct page corresponding to their selected genre.
+
+    * Test: The 'Generate/ Genre Type' page should have a prefilled in Story Idea field in its form.
+    * Result: It does have a prefilled in Story Idea field in the form when accessing the page.
+
+    * Test: The 'Generate/ Genre Type' page should contain only ideas that correlate to the genre chosen from the 'Create Idea/ Genre Page'.
+    * Results: After testing all of the current links in the 'Create Idea/ Genre Page' all of them go to pages that only pull from parts of the database with ideas correlating with the genre chosen.
+
+    * Test: By clicking the button labelled 'Generate Another Idea!', the prefilled field is changed as the page is refreshed.
+    * Result: The prefilled field is changed when the page refreshes and it only pulls from parts of the database with ideas correlating with the genre chosen.
+
 ### Responsiveness
+* The 'Generate/ Genre Type' page should be responsive over many device sizes.
+    * Test: The 'Generate/ Genre Type' page works across a large range of devices, and text, fields and buttons resize to fit.
+    * Result: This happens, and the large size of the textareas allow the text to continue to be visible even at very small screen widths.
+
 
 ## Create Story Idea Testing
 ### Message Testing
