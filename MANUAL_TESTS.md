@@ -4,6 +4,7 @@ Here are a list of manual tests that have been carried out to ensure that Synthe
 
 ## Base Navigation Bar Testing
 * User should be able to navigate the site easily using the navigation bar at the top of the page. On smaller screen sizes, the navigation bar should fold into a burger menu. The navigation bar should also reflect the user's logged in state; showing a login and signup link if the user is not logged in and a logout link if the user is logged in.
+
     * Test: Each of the navigation links in the navigation bar should be usable and go to the correct page, and the SyntheStory logo should also redirect back to the homepage.
     * Result: Each of the navigation links in the navigation bar are usable and go to the correct page, the SyntheStory logo also redirects back to the homepage.
 
@@ -15,11 +16,13 @@ Here are a list of manual tests that have been carried out to ensure that Synthe
 
 ### Responsiveness
 * The user should be able to use the navigation bar in SyntheStory across a wide range of devices and the navigation bar should squash down to a quasi-burger menu (with the word Menu instead to aid accessibility).
+
     * Test: Using DevTools Responsive adjustment, the Menu compresses/ expands in width and looks good and is usable across a wide range of devices.
     * Result: The Menu compresses and expands at 992px width so is expanded for monitors and compressed for most tablets/ mobile devices. The compressed menu works by being clicked/ touched and dropping down and this works without affecting any other web pages usability.
 
 ## Base Footer Testing
 * User should be able to navigate to social media links from clicking on the icons, the user's logged in status should also be noticed if the user is logged in. 
+
     * Test: All of the social media links are usable and direct to the corresponding social media site's front page.
     * Result: The social media links all work and direct to the correct pages.
 
@@ -28,11 +31,13 @@ Here are a list of manual tests that have been carried out to ensure that Synthe
 
 ### Responsiveness
 * The social media links should change their spacing and layout to display differently on different device sizes.
+
     * Test: Using DevTools responsive adjustment, the footer should change layout and distance between social media links responsively.
     * Result: The footer changes from inline to block-layout at 768px width and when inlined they move apart equally.
 
 ## Homepage Testing
 * The homepage should display the instructions for using SyntheStory and this should be laid out easily for the user.
+
     * Test: The instructions on the home page should be easy to follow.
     * Result: The user can clearly understand the instructions as they are in order and have a linebreak between them. The text also contains emphasis and is contrasted well with the background.
 
@@ -44,11 +49,13 @@ Here are a list of manual tests that have been carried out to ensure that Synthe
 
 ### Responsiveness
 * The homepage should change its layout in order to accomodate different screen sizes.
+
     * Test: The layout of the page should change to work on multiple different screen sizes.
     * Result: The layout changes from inlining the Step x with its corresponding text on screen widths larger than 1200px to making them block elements. This still makes sense with the text for each step appearing after the Step x title. The Steps and texts are still in the correct order.
 
 ## Signup Testing
 * The user should be able to signup to SyntheStory by creating an account.
+
     * Test: On the Signup page, the user should be able to create an account with SyntheStory with no errors coming up.
     * Result: A user can signup an account with SyntheStory, in which case they are logged in and redirected back to the home page.
 
@@ -60,8 +67,24 @@ Here are a list of manual tests that have been carried out to ensure that Synthe
 
 ## Login Testing
 * The user should be able to login without hassle once they have signed up.
+
     * Test: The user is able to login once they have registered an account by signing up.
     * Result: The user can log in with their registered account.
+
+### Message Testing 
+* The user should receive a message when they login that disappears after three seconds unless it is closed out.
+
+    * Test: The user recieves a message when they login that addresses who they are logged in as.
+    * Result: When a user signs in, the message they receive is "Successfully signed in as {{ username }}".
+
+    * Test: The login message disappears after three seconds automatically.
+    * Result: The login message disappears soon after appearing automatically. I didn't accurately measure the time but seemed roughly three seconds from counting.
+
+    * Test: The user can dismiss the message by clicking the 'X' before the message is automatically dismissed.
+    * Result: It is possible to dimiss the message before it is automatically dismissed by clicking the 'X' within three seconds of the message appearing.
+
+## Login Protection Testing
+* Users should be prevented from accessing parts of the site they shouldn't without first logging in.
 
     * Test: The user can access the 'Create an Idea/ Genre' page straight after logging in if they click on it and fill in the log in.
     * Result: The user will go immediately to 'Create an Idea/ Genre' page straight after logging in after trying to click on it whilst not logged in.
@@ -75,23 +98,52 @@ Here are a list of manual tests that have been carried out to ensure that Synthe
     * Test: The user can access a 'Story Idea' page by typing in the url and logging in as long as that particular Story Idea page is associated with thier account and not someone elses.
     * Result: The user can do this if they know the url. For example https://synthestory.herokuapp.com/my-stories/1/36/ would relate to the first user and the thirty-sixth story idea created. If the thirty sixth story idea is connected by a foreign key in the database to the first user in the database they can access this page immediately after completing the login prompt.
 
+## User Data Protection Testing
+* The user shouldn't be able to edit or delete other user's story ideas by accessing pages that contain story ideas linked to another user.
+
     * Test: The user CAN'T access another user's stories by typing in the url and are redirected to the homepage instead.
     * Result: Another user is prevented from accessing another user's story by being redirected to the homepage. If they are not logged in they are redirected to the login page.
 
-### Message Testing 
-* The user should receive a message when they login that disappears after 3 seconds unless it is closed out.
-    * Test: The user recieves a message when they login that addresses who they are logged in as.
-
-
-## Login Protection Testing
-
-## User Data Protection Testing
-
 ## Logout Testing
+* The user should be able to logout without errors.
+
+    * Test: A logged in user can click the link to the Logout page and is directed to it.
+    * Result: A logged in user can do this.
+
+    * Test: A logged in user should be able to click the 'Sign Out' button on the Logout page to log out. They should be redirected to the home page.
+    * Result: A logged in user can do this.
+
 ### Message Testing
+* The user should receive a message when they login that disappears after three seconds unless it is closed out.
+    * Test: The user recieves a message when they logout that addresses the fact they have logged out.
+    * Result: The user receives a message saying "You have signed out."
+
+    * Test: The logout message disappears after three seconds automatically.
+    * Result: The logout message disappears soon after appearing automatically. I didn't accurately measure the time but seemed roughly three seconds from counting.
+
+    * Test: The user can dismiss the message by clicking the 'X' before the message is automatically dismissed.
+    * Result: It is possible to dimiss the message before it is automatically dismissed by clicking the 'X' within three seconds of the message appearing.
 
 ## Create Idea/ Genre Page Testing
+* The user should be able to access the 'Create Idea/ Genre Page' once they have logged in.
+    
+    * Test: From the homepage, a logged in user should be able to click on the 'Create Idea' link in the navigation bar and be taken to the Genre Page.
+    * Result: A logged in user can do this.
+
+    * Test: Images should be displayed for each genre available, giving an insight into something to do with the genre. This should be tested in the deployed site to ensure it is correctly uploaded from Cloudinary.
+    * Result: Images are available to view (however they disappear at smaller device sizes to save pageroom).
+
 ### Responsiveness
+* The 'Create Idea/ Genre Page' should change drastically depending on the size of device used. This is because the page uses images and as such needs to change so that it works correctly.
+    
+    * Test: On larger device sizes the 'cards' used for the genres display in rows of three.
+    * Result: At sizes of 768px width and up the genres display in a line of three.
+
+    * Test: On medium device sizes the 'cards' display in rows of one as block elements but still have images in them.
+    * Result: At sizes between 500px and 768px width the 'cards' display in single lines and still contain images.
+
+    * Test: On small device sizes the 'cards' display like on medium devices but without any images.
+    * Result: The images display value is set to 'none' but the 'cards' still contain the text and links.
 
 ## Generate/ Genre Type Page Testing
 ### Responsiveness
