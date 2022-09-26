@@ -170,6 +170,9 @@ Here are a list of manual tests that have been carried out to ensure that Synthe
     * Test: By clicking on the 'Save Story Idea' button on the 'Generate/ Genre Type' page the user is redirected to the 'My Stories Page' where their Story Idea appears. This only happens if the Title and Story Idea fields are filled out.
     * Result: After filling out the relevant fields and clicking the button, the user is directed to the My Stories Page, where the Story Idea appears.
 
+    * Test: The user should be able to edit the Story Idea field and populate it with their own text before saving the story idea.
+    * Result: This is possible and redirects to the My Stories Page and the saved text is the same as what the user has inputted.
+
 ### Message Testing
 * The user should receive a message when they save a Story Idea that disappears after three seconds unless it is closed out.
     * Test: The user recieves a message when they save a Story Idea that addresses the fact they have saved one.
@@ -185,9 +188,32 @@ Here are a list of manual tests that have been carried out to ensure that Synthe
 * The 'My Stories' Page is where a logged in user's Story Ideas should be held.
     * Test: A logged in user can access the 'My Stories' page by clicking on the link in the navigation bar titled: 'My Stories'.
     * Result: A logged in user can do this and will be sent to their own page.
+
+    * Test: If a user has no saved stories, text appears telling and a link to the 'Create Idea/ Genre Page' is provided.
+    * Result: This occurs and the link works.
+
+    * Test: A user's saved stories appear in the 'My Stories' page.
+    * Result: This occurs and you can click on the links to be taken to the respective page for each Story Idea.
+
+    * Test: A user's saved stories appear in order of most-recently edited on the 'My Stories' page.
+    * Result: After editing a Story Idea it appears first in the 'My Stories' page.
+
 ### Responsiveness
+* The page layout of the 'My Stories' page should change based on the width of the device used and should be responsive.
+
+    * Test: On larger device sizes, the layout of the page should have rows of three cards, with any excess remainders of one or two falling on a new row.
+    * Result: This occurs on devices of 768px width or larger, with each card being equal in width.
+
+    * Test: On smaller devices, the layout of the page has each 'card' on its own row.
+    * Result: This occurs on devices of 768px or lower.
 
 ## Story Idea Page Testing
+* The 'Story Idea' page should be accessible from the 'My Stories' page. The 'Story Idea' page contains whatever Story Idea a user has clicked on from their 'My Stories' page.
+    
+    * Test: A logged in user can access a 'Story Idea' page by clicking on the 'View' link in the 'My Stories' page.
+    * Result: This is possible, and returns a page containing that exact Story Idea.
+
+
 ### Responsiveness
 
 ## Edit Story Idea Testing
