@@ -22,6 +22,21 @@ def random_story_part(model_list, id_number):
     return story_part
 
 
+def user_story_idea_protection(request):
+    """
+    Function which deals with preventing a 
+    user accessing another user's Story Ideas.
+    Takes a request and renders a render or redirect depending 
+    on what is needed.
+    """
+    if not request.user.is_authenticated:
+        # sends a not logged in user to the login page
+        return redirect('account_login')
+    else:
+        # returns user to 403 if they try to access other user's stories
+        return render(request, '403.html')
+
+
 def get_home_page(request):
     """
     View which renders homepage.
@@ -100,13 +115,8 @@ def get_my_stories_page(request, id):
         }
         return render(request, 'my-stories.html', context)
     else:
-        if not request.user.is_authenticated:
-            # sends a not logged in user to the login page
-            return redirect('account_login')
-        else:
-            # returns user to 403 if they try to access other user's stories
-            return render(request, '403.html')
-
+        follow_path = user_story_idea_protection(request)
+        return follow_path
 
 @login_required
 def get_my_stories_idea(request, id, idea_id):
@@ -147,12 +157,8 @@ def get_my_stories_idea(request, id, idea_id):
         return render(request, 'story-idea.html', context)
 
     else:
-        if not request.user.is_authenticated:
-            # sends a not logged in user to the login page
-            return redirect('account_login')
-        else:
-            # returns user to 403 if they try to access other user's stories
-            return render(request, '403.html')
+        follow_path = user_story_idea_protection(request)
+        return follow_path
     
 
 
