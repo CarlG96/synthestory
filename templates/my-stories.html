@@ -10,17 +10,22 @@
             <div class="card">
                 <div class="card-body">
                     <h3 class="black-text center-text card-title">{{ story_idea.title }}</h3>
-                    <a href="/my-stories/{{user.id}}/{{story_idea.id}}/" class="black-text center-text card-link ">View</a>
+                    <a href="/my-stories/{{user.id}}/{{story_idea.id}}/"
+                        class="black-text center-text card-link ">View</a>
                 </div>
-              </div>
+            </div>
         </div>
         {% endfor %}
     </div>
 </div>
 
 {% else %}
+<div class="container-fluid generic-area">
 <p class="white-text center-text">You don't have any story ideas yet!</p>
-<a href="{% url 'genre-page' %}" class="white-text link center-text"><h2>Click here to start!</h2></a>
+<a href="{% url 'genre-page' %}" class="white-text link center-text">
+    <h2>Click here to start!</h2>
+</a>
+</div>
 
 {% endif %}
 

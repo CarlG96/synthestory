@@ -165,11 +165,26 @@ Here are a list of manual tests that have been carried out to ensure that Synthe
     * Test: The 'Generate/ Genre Type' page works across a large range of devices, and text, fields and buttons resize to fit.
     * Result: This happens, and the large size of the textareas allow the text to continue to be visible even at very small screen widths.
 
-
 ## Create Story Idea Testing
+* On the 'Generate/ Genre Type' page, the user should be able to create a story.
+    * Test: By clicking on the 'Save Story Idea' button on the 'Generate/ Genre Type' page the user is redirected to the 'My Stories Page' where their Story Idea appears. This only happens if the Title and Story Idea fields are filled out.
+    * Result: After filling out the relevant fields and clicking the button, the user is directed to the My Stories Page, where the Story Idea appears.
+
 ### Message Testing
+* The user should receive a message when they save a Story Idea that disappears after three seconds unless it is closed out.
+    * Test: The user recieves a message when they save a Story Idea that addresses the fact they have saved one.
+    * Result: The user receives a message saying "Successfully added story idea: {{ Story Idea }}".
+
+    * Test: The message disappears after three seconds automatically.
+    * Result: The message disappears soon after appearing automatically. I didn't accurately measure the time but seemed roughly three seconds from counting.
+
+    * Test: The user can dismiss the message by clicking the 'X' before the message is automatically dismissed.
+    * Result: It is possible to dimiss the message before it is automatically dismissed by clicking the 'X' within three seconds of the message appearing.
 
 ## My Stories Page Testing
+* The 'My Stories' Page is where a logged in user's Story Ideas should be held.
+    * Test: A logged in user can access the 'My Stories' page by clicking on the link in the navigation bar titled: 'My Stories'.
+    * Result: A logged in user can do this and will be sent to their own page.
 ### Responsiveness
 
 ## Story Idea Page Testing
