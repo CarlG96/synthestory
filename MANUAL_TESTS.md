@@ -1,6 +1,6 @@
 # Manual Tests
 
-Here are a list of manual tests that have been carried out to ensure that SyntheStory works correctly and is bug-free at time of deployment. They also include Behaviour-Driven Tests.
+Here are a list of manual tests that have been carried out to ensure that SyntheStory works correctly and is bug-free at time of deployment. They also include Behaviour-Driven Tests and some testing of the JavaScript used for messages to appear and disappear.
 
 ## Base Navigation Bar Testing
 * User should be able to navigate the site easily using the navigation bar at the top of the page. On smaller screen sizes, the navigation bar should fold into a burger menu. The navigation bar should also reflect the user's logged in state; showing a login and signup link if the user is not logged in and a logout link if the user is logged in.
@@ -213,13 +213,48 @@ Here are a list of manual tests that have been carried out to ensure that Synthe
     * Test: A logged in user can access a 'Story Idea' page by clicking on the 'View' link in the 'My Stories' page.
     * Result: This is possible, and returns a page containing that exact Story Idea.
 
+    * Test: The 'Story Idea' page should have a 'Delete Story Idea' button which can only be accessed by clicking a dropdown.
+    * Result: The user is prevented from clicking the 'Delete Story Idea' button until the dropdown comes down.
 
 ### Responsiveness
+* The 'Story Idea' page should change based on the width of the device used and should be responsive.
+
+    * Test: The 'Story Idea' page should accomodate devices of many sizes.
+    * Result: The 'Story Idea' page does not change layout but squashes and looks good across a large range of devices. On very small width devices the Story Idea field adds a scroll when the text overspills.
 
 ## Edit Story Idea Testing
+* The user should have the ability to edit their Story Ideas from inside the 'Story Idea' page of that respective Story Idea.
+
+    * Test: If the user changes the Story Idea or Title fields and clicks the edit button, they should edit their Story Idea and this should be saved.
+    * Result: The user is redirected to the 'My Stories' page and the Story Idea and Title fields will be changed upon entering the same 'Story Idea' page. The most newly updated item also appears first in the 'My Stories' page.
+
 ### Message Testing
+* The user should receive a message when they edit a Story Idea that disappears after three seconds unless it is closed out.
+
+    * Test: The user recieves a message when they edit a Story Idea that addresses the fact they have edited one.
+    * Result: The user receives a message saying "Successfully edited story idea: {{ Story Idea }}".
+
+    * Test: The message disappears after three seconds automatically.
+    * Result: The message disappears soon after appearing automatically. I didn't accurately measure the time but seemed roughly three seconds from counting.
+
+    * Test: The user can dismiss the message by clicking the 'X' before the message is automatically dismissed.
+    * Result: It is possible to dimiss the message before it is automatically dismissed by clicking the 'X' within three seconds of the message appearing.
 
 ## Delete Story Idea Testing
-### Message Testing
+* The user should have the ability to delete their Story Ideas when they no longer want them.
 
+    * Test: If the user clicks the 'Delete Story Idea' button in the 'Story Idea', that Story Idea will be deleted.
+    * Result: When the user clicks the 'Delete Story Idea' button, the story is deleted and the user is redirected to the 'My Stories' page. The story will not appear as it has been deleted from the database.
+
+### Message Testing
+* The user should receive a message when they delete a Story Idea that disappears after three seconds unless it is closed out.
+
+    * Test: The user recieves a message when they delete a Story Idea that addresses the fact they have deleted one.
+    * Result: The user receives a message saying "Successfully deleted story idea: {{ Story Idea }}".
+
+    * Test: The message disappears after three seconds automatically.
+    * Result: The message disappears soon after appearing automatically. I didn't accurately measure the time but seemed roughly three seconds from counting.
+
+    * Test: The user can dismiss the message by clicking the 'X' before the message is automatically dismissed.
+    * Result: It is possible to dimiss the message before it is automatically dismissed by clicking the 'X' within three seconds of the message appearing.
 
