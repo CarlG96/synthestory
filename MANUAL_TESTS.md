@@ -50,9 +50,38 @@ Here are a list of manual tests that have been carried out to ensure that Synthe
 ## Signup Testing
 * The user should be able to signup to SyntheStory by creating an account.
     * Test: On the Signup page, the user should be able to create an account with SyntheStory with no errors coming up.
+    * Result: A user can signup an account with SyntheStory, in which case they are logged in and redirected back to the home page.
+
+    * Test: The user should be able to create an account without supplying an email address, as this is optional.
+    * Result: The user can create an account without supplying an email address.
+
+    * Test: If the user's password is too short, they are notified and not signed up.
+    * Result: The user is not signed up and the text "This password is too short. It must contain at least 8 characters." is displayed.
 
 ## Login Testing
+* The user should be able to login without hassle once they have signed up.
+    * Test: The user is able to login once they have registered an account by signing up.
+    * Result: The user can log in with their registered account.
+
+    * Test: The user can access the 'Create an Idea/ Genre' page straight after logging in if they click on it and fill in the log in.
+    * Result: The user will go immediately to 'Create an Idea/ Genre' page straight after logging in after trying to click on it whilst not logged in.
+
+    * Test: The user CAN'T access the 'My Stories' Page after clicking on the link and then logging in but are redirected to the home page. This is to prevent url errors with 'None' becoming part of the url.
+    * Result: The user is redirected to the home page if they try to directly access the My Stories Page and then log in when prompted.
+
+    * Test: The user can access the 'Generate/ Genre Type Page' directly if they fill in the url for it and pass the login prompt.
+    * Result: The user can access these pages after logging in if they know the url as this is not a security issue.
+
+    * Test: The user can access a 'Story Idea' page by typing in the url and logging in as long as that particular Story Idea page is associated with thier account and not someone elses.
+    * Result: The user can do this if they know the url. For example https://synthestory.herokuapp.com/my-stories/1/36/ would relate to the first user and the thirty-sixth story idea created. If the thirty sixth story idea is connected by a foreign key in the database to the first user in the database they can access this page immediately after completing the login prompt.
+
+    * Test: The user CAN'T access another user's stories by typing in the url and are redirected to the homepage instead.
+    * Result: Another user is prevented from accessing another user's story by being redirected to the homepage. If they are not logged in they are redirected to the login page.
+
 ### Message Testing 
+* The user should receive a message when they login that disappears after 3 seconds unless it is closed out.
+    * Test: The user recieves a message when they login that addresses who they are logged in as.
+
 
 ## Login Protection Testing
 
