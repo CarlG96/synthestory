@@ -8,7 +8,26 @@ After creating an account o SyntheStory, a user can filter by genre and SyntheSt
 
 After a user has given a story idea a title, they can edit (editing can be done before saving), save and delete stories by accessing their own area of the website called 'My Stories'. This way a user can refer to their ideas, change randomly generated ones that don't <em>quite</em> fit and even create entirely original ones. SyntheStory is a website designed to get an author's writing off the ground and NOT a place to actually write stories so there is a character limit on the length of story idea.
 
-## Features
+## Features/ Pages
+
+### Homepage
+The Homepage contains a brief introduction and instructions on how to use SyntheStory. It is the only 'main page' (meaning pages other than error pages or pages to do with login) which does not require login access.
+
+<!-Picture goes here->
+
+### Genre Page
+The Genre page contains a list of genres from which the user can choose to narrow down a generated story idea. They can click on the links in the cards to take them to a Genre Type page which will display a Story Idea with their chosen genre.
+
+<!-Picture goes here->
+
+### Genre Type Page
+The Genre Type page contains a randomly generated Story Idea taken from a 'bank' of Story pieces in the database related to a specific genre. The user can save a story idea using the Save Story Idea! button or refresh the page with a new randomly generated Story Idea by clicking the Generate Another Idea! button. The user can also edit the Story Idea field text and both fields must be filled in before a submission can be made.
+
+<!-Picture goes here->
+### My Stories Page
+
+### Story Ideas Page
+
 
 ## Future Features
 
@@ -64,4 +83,3 @@ Firefox messages: The messages that display on firefox browser do not have the t
 ## Credits
 https://www.youtube.com/watch?v=qNifU_aQRio tutorial for navbar
 pixabay for images
-https://www.youtube.com/watch?v=GUEB9FogoP8&list=PLDyQo7g0_nsXEOxGlAgccV8fu-cHZnI5B&index=8 for animation of logo

@@ -100,9 +100,8 @@ def get_my_stories_page(request, id):
         }
         return render(request, 'my-stories.html', context)
     else:
-        # returns user to login if they try to access other user's stories
-        # if they are logged in redirects to homepage
-        return redirect('account_login')
+        # returns user to 403 if they try to access other user's stories
+        return render(request, '403.html')
 
 
 @login_required
@@ -141,12 +140,11 @@ def get_my_stories_idea(request, id, idea_id):
             'story_idea': story_idea,
             'story_idea_form': form
         }
-        return render(request, 'story_idea.html', context)
+        return render(request, 'story-idea.html', context)
 
     else:
-        # returns user to login if they try to access other user's stories
-        # if they are logged in redirects to homepage
-        return redirect('account_login')
+        # returns user to 403 if they try to access other user's stories
+        return render(request, '403.html')
 
 
 @login_required
