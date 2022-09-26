@@ -55,6 +55,8 @@ I tried to use an internal script in the HTML to pre-populate a form by changing
 
 ## Unfixed Bugs
 
+Firefox messages: The messages that display on firefox browser do not have the text and cross line up correctly. As they work on brave I have left this as it may just be a discrepancy between how the browsers display the messages and it is still prefectly readable and understandable on Firefox.
+
 ## Deployment
 
 ## Credits
