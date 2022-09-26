@@ -100,8 +100,12 @@ def get_my_stories_page(request, id):
         }
         return render(request, 'my-stories.html', context)
     else:
-        # returns user to 403 if they try to access other user's stories
-        return render(request, '403.html')
+        if not request.user.is_authenticated:
+            # sends a not logged in user to the login page
+            return redirect('account_login')
+        else:
+            # returns user to 403 if they try to access other user's stories
+            return render(request, '403.html')
 
 
 @login_required
@@ -143,8 +147,13 @@ def get_my_stories_idea(request, id, idea_id):
         return render(request, 'story-idea.html', context)
 
     else:
-        # returns user to 403 if they try to access other user's stories
-        return render(request, '403.html')
+        if not request.user.is_authenticated:
+            # sends a not logged in user to the login page
+            return redirect('account_login')
+        else:
+            # returns user to 403 if they try to access other user's stories
+            return render(request, '403.html')
+    
 
 
 @login_required

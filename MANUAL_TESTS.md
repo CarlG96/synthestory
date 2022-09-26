@@ -101,8 +101,8 @@ Here are a list of manual tests that have been carried out to ensure that Synthe
 ## User Data Protection Testing
 * The user shouldn't be able to edit or delete other user's story ideas by accessing pages that contain story ideas linked to another user.
 
-    * Test: The user CAN'T access another user's stories by typing in the url and are redirected to the homepage instead.
-    * Result: Another user is prevented from accessing another user's story by being redirected to the homepage. If they are not logged in they are redirected to the login page.
+    * Test: The user CAN'T access another user's stories by typing in the url and are redirected to the 403 page instead.
+    * Result: Another user is prevented from accessing another user's story by being redirected to the 403 page.
 
 ## Logout Testing
 * The user should be able to logout without errors.
