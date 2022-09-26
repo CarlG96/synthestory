@@ -67,7 +67,7 @@ MESSAGE_TAGS = {
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-ACCOUNT_EMAIL_VERIFICATION = 'optional'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
