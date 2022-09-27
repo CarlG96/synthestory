@@ -30,10 +30,10 @@ Here are a list of manual tests that have been carried out to ensure that Synthe
     * Result: The footer says "Logged in as {{ username }}" if the user is logged in and doesn't display this information if the user is not logged in.
 
 ### Responsiveness
-* The social media links should change their spacing and layout to display differently on different device sizes.
+* The social media links should look good for a wide range of devices.
 
-    * Test: Using DevTools responsive adjustment, the footer should change layout and distance between social media links responsively.
-    * Result: The footer changes from inline to block-layout at 768px width and when inlined they move apart equally.
+    * Test: Using DevTools responsive adjustment, the footer should change distance between social media links responsively.
+    * Result: The footer reacts responsively across a wide range of devices.
 
 ## Homepage Testing
 * The homepage should display the instructions for using SyntheStory and this should be laid out easily for the user.
