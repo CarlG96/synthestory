@@ -231,7 +231,13 @@ Here are a list of manual tests that have been carried out to ensure that Synthe
 ## Edit Story Idea Testing
 * The user should have the ability to edit their Story Ideas from inside the 'Story Idea' page of that respective Story Idea.
 
-    * Test: If the user changes the Story Idea or Title fields and clicks the edit button, they should edit their Story Idea and this should be saved.
+    * Test: The textareas in the form for the Story Idea should be disabled upon entering the 'Story Idea' page.
+    * Result: The textareas are disabled via script by default.
+
+    * Test: If the user clicks the 'Edit Story Idea' button, then a new button called the 'Save Edited Idea' button should appear and the Story Idea and Title fields should become changeable.
+    * Result: This occurs and the fields are changeable.
+
+    * Test: If the user changes the Story Idea or Title fields and clicks the 'Save Edited Idea' button, they should edit their Story Idea and this should be saved.
     * Result: The user is redirected to the 'My Stories' page and the Story Idea and Title fields will be changed upon entering the same 'Story Idea' page. The most newly updated item also appears first in the 'My Stories' page.
 
 ### Message Testing
