@@ -1,6 +1,6 @@
 # Manual Tests
 
-Here are a list of manual tests that have been carried out to ensure that SyntheStory works correctly and is bug-free at time of deployment. They also include Behaviour-Driven Tests and some testing of the JavaScript used for messages to appear and disappear.
+Here are a list of manual tests that have been carried out to ensure that SyntheStory works correctly and is bug-free at time of deployment. They also include Behaviour-Driven Tests and some testing of the JavaScript used for messages to appear and disappear and for the defensive edit feature in the 'Story Idea' page.
 
 ## Base Navigation Bar Testing
 * User should be able to navigate the site easily using the navigation bar at the top of the page. On smaller screen sizes, the navigation bar should fold into a burger menu. The navigation bar should also reflect the user's logged in state; showing a login and signup link if the user is not logged in and a logout link if the user is logged in.
