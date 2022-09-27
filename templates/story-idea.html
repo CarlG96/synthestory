@@ -10,7 +10,8 @@
                 <form class="white-text" method="post">
                     {{ story_idea_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="generate-button mt-3 me-3">Edit Story Idea</button>
+                    <button type="button" id="open-button" class="generate-button mt-3 me-3">Edit Story Idea</button>
+                    <button type="submit" id="edit-button" class="generate-button mt-3 me-3 hide-button">Save Edit</button>
                 </form>
             </div>
             <div class="row">
@@ -38,4 +39,22 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block script %}
+<script>
+    const textArea1 = document.getElementsByTagName("textarea")[0];
+    textArea1.disabled = true;
+    const textArea2 = document.getElementsByTagName("textarea")[1];
+    textArea2.disabled = true;
+    const openButton = document.getElementById("open-button");
+    const editButton = document.getElementById("edit-button");
+
+    openButton.addEventListener('click', function() {
+        openButton.classList.add("hide-button");
+        editButton.classList.remove("hide-button");
+        textArea1.disabled = false;
+        textArea2.disabled = false;
+    });
+</script>
 {% endblock %}

@@ -10,6 +10,7 @@
             <div class="card">
                 <div class="card-body">
                     <h3 class="black-text center-text card-title">{{ story_idea.title }}</h3>
+                    <p class="card-text">{{ story_idea.story_text }}</p>
                     <a href="/my-stories/{{user.id}}/{{story_idea.id}}/"
                         class="black-text center-text card-link ">View</a>
                 </div>
@@ -30,3 +31,4 @@
 {% endif %}
 
 {% endblock %}
+
