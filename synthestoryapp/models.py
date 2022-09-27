@@ -124,7 +124,7 @@ class StoryIdea(models.Model):
     represnted by DateTime.
     """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField(max_length=30, blank=False)
+    title = models.CharField(max_length=15, blank=False)
     story_text = models.CharField(max_length=200, blank=False)
     creation_date = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)

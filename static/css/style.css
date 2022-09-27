@@ -255,6 +255,17 @@ a i {
     display: none;
 }
 
+.elipse {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+p.elipse {
+    width: 50%;
+}
+
 
 
 
