@@ -15,6 +15,13 @@ class StoryIdeaForm(forms.ModelForm):
         """
         Information about fields
         and labels
+        Attributes:
+        model (class): Class of StoryIdea used to make
+        form.
+        fields (tuple of str): Designates fields for
+        form.
+        widgets (dictionary): Designates size of textareas.
+        labels (dictionary): Adds labels to form.
         """
         model = StoryIdea
         fields = ('title', 'story_text')

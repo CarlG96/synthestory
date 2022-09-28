@@ -11,6 +11,3 @@ admin.site.register(StoryStart)
 admin.site.register(StoryMiddle)
 admin.site.register(StoryEnd)
 admin.site.register(StoryIdea)
-
-
-# Register your models here.

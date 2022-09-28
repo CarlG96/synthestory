@@ -10,10 +10,12 @@ from cloudinary.models import CloudinaryField
 class Genre(models.Model):
     """
     Class for the Genre Model.
-    Genre has a genre_title attribute representing a title.
-    Genre has a genre_image attribute representing an image of the genre.
-    Genre has a genre_description attribute describing the genre.
-    Genre has a creation_date attribute which is represented by DateTime.
+    Attributes:
+    genre_title (str): Represents the title for the Genre.
+    genre_image (file): An image associated with the Genre.
+    genre_description (str): Describes the genre.
+    creation_date (DateTime): Date and time of creation of the
+    Genre.
     """
     genre_title = models.CharField(max_length=20, unique=True)
     genre_image = CloudinaryField('image', default='placeholder')
@@ -25,6 +27,8 @@ class Genre(models.Model):
         Orders the data of the Genre model so that
         it goes by creation date, with the earliest coming
         first.
+        Attributes:
+        ordering (list): Orders the Genre models.
         """
         ordering = ['creation_date']
 
@@ -34,13 +38,15 @@ class Genre(models.Model):
 
 class StoryStart(models.Model):
     """
-    Class for the StoryStart Model.
-    StoryStart has a story_text attribute representing the
-    start of a story idea.
-    StoryStart has a creation_date which is represented
-    by DateTime.
-    StoryStart has a genre attribute which is a foreign key to
-    the primary key of a Genre Model.
+    Class for the StoryStart Model. This model
+    represents the start of one of SyntheStory's
+    'Story Ideas'.
+    Attributes:
+    story_text (str): The text of the StoryStart.
+    creation_date (DateTime): Date and time of creation of the
+    StoryStart.
+    genre (ForeignKey): A foreign key which links to the
+    primary key of a Genre Model.
     """
     story_text = models.CharField(max_length=30, unique=True)
     creation_date = models.DateTimeField(auto_now_add=True)
@@ -51,6 +57,8 @@ class StoryStart(models.Model):
         Orders the data of the Genre model so that
         it goes by creation date, with the earliest coming
         first.
+        Attributes:
+        ordering (list): Orders the StoryStart models.
         """
         ordering = ['creation_date']
 
@@ -61,12 +69,15 @@ class StoryStart(models.Model):
 class StoryMiddle(models.Model):
     """
     Class for the StoryMiddle Model.
-    StoryMiddle has a story_text attribute representing the
-    middle of a story idea.
-    StoryMiddle has a creation_date which is represented
-    by DateTime.
-    StoryMiddle has a genre attribute which is a foreign key to
-    the primary key of a Genre Model.
+    This model
+    represents the middle of one of SyntheStory's
+    'Story Ideas'.
+    Attributes:
+    story_text (str): The text of the StoryMiddle.
+    creation_date (DateTime): Date and time of creation of the
+    StoryMiddle.
+    genre (ForeignKey): A foreign key which links to the
+    primary key of a Genre Model.
     """
     story_text = models.CharField(max_length=50, unique=True)
     creation_date = models.DateTimeField(auto_now_add=True)
@@ -77,6 +88,8 @@ class StoryMiddle(models.Model):
         Orders the data of the Genre model so that
         it goes by creation date, with the earliest coming
         first.
+        Attributes:
+        ordering (list): Orders the StoryMiddle models.
         """
         ordering = ['creation_date']
 
@@ -87,12 +100,15 @@ class StoryMiddle(models.Model):
 class StoryEnd(models.Model):
     """
     Class for the StoryEnd Model.
-    StoryEnd has a story_text attribute representing the
-    end of a story idea.
-    StoryEnd has a creation_date which is represented
-    by DateTime.
-    StoryEnd has a genre attribute which is a foreign key to
-    the primary key of a Genre Model.
+    This model
+    represents the end of one of SyntheStory's
+    'Story Ideas'.
+    Attributes:
+    story_text (str): The text of the StoryEnd.
+    creation_date (DateTime): Date and time of creation of the
+    StoryEnd.
+    genre (ForeignKey): A foreign key which links to the
+    primary key of a Genre Model.
     """
     story_text = models.CharField(max_length=60, unique=True)
     creation_date = models.DateTimeField(auto_now_add=True)
@@ -103,6 +119,8 @@ class StoryEnd(models.Model):
         Orders the data of the Genre model so that
         it goes by creation date, with the earliest coming
         first.
+        Attributes:
+        ordering (list): Orders the StoryMiddle models.
         """
         ordering = ['creation_date']
 
@@ -113,15 +131,18 @@ class StoryEnd(models.Model):
 class StoryIdea(models.Model):
     """
     Class for the StoryIdea Model.
-    StoryIdea has a user attribute which is a foreign key
-    to the primary key of a User Model.
-    StoryIdea has a title attribute representing a title.
-    StoryIdea has a story_text attribute representing the
-    text of a story idea.
-    StoryIdea has a creation_date attribute which is
-    represented by DateTime.
-    StoryIdea has an updated_on attribute which is
-    represnted by DateTime.
+    This class represents a saved
+    'Story Idea' by a user.
+    Attributes:
+    user (ForeignKey): foreign key to the primary key
+    of a User Model.
+    title (str): Represents the title for the StoryIdea.
+    story_text (str): Represents the
+    text of a StoryIdea.
+    creation_date (DateTime): Date and time of creation of the
+    StoryIdea.
+    updated_on (DateTime): Date and time of the most
+    recent update to the StoryIdea.
     """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=30, blank=False)
@@ -134,6 +155,8 @@ class StoryIdea(models.Model):
         Orders the data of the Genre model so that
         it goes by the date on which it was updated,
         with the most recently updated coming first.
+        Attributes:
+        ordering (list): Orders the StoryIdea models.
         """
         ordering = ['-updated_on']
 
