@@ -56,11 +56,15 @@ class TestLoggedInViews(TestCase):
         self.assertTemplateUsed(response, 'story-idea.html')
 
     def test_my_stories_protection(self):
-        #     story_idea = models.StoryIdea.objects.create(title='Pat', story_text='ThePostman', user=second_user)
         response = self.client.get(f'/my-stories/{self.second_user.id}/')
         self.assertTrue(response.status_code, 403)
         self.assertTemplateUsed(response, '403.html')
-        
+    
+    def test_story_idea_protection(self):
+        story_idea = models.StoryIdea.objects.create(title='Pat', story_text='ThePostman', user=self.second_user)
+        response = self.client.get(f'/my-stories/{self.second_user.id}/{story_idea.id}/')
+        self.assertTrue(response.status_code, 403)
+        self.assertTemplateUsed(response, '403.html')
 
 class TestLoggedOutViews(TestCase):
 
