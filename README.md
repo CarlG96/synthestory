@@ -86,6 +86,8 @@ I tried to use an internal script in the HTML to pre-populate a form by changing
 
 ACCOUNT_EMAIL_VERIFICATION was set to 'optional' in settings. When making fake accounts to test the signup feature using fake email addresses would cause a 500 internal server error due to the email not being sent to a valid email address but the account would still be created. As SyntheStory does not require an email address to verify account I decided to change ACCOUNT_EMAIL_VERIFICATION to 'none' to prevent internal server errors.
 
+In automated testing, a test to return a 403 response was triggering a 200 instead. After looking into it, it appeared I was using a 200 response in my views but redirecting to a 403 template. Used the HttpResponseForbidden class from Django to get around this.
+
 ## Unfixed Bugs
 
 Firefox messages: The messages that display on firefox browser do not have the text and cross line up correctly. As they work on brave I have left this as it may just be a discrepancy between how the browsers display the messages and it is still prefectly readable and understandable on Firefox.

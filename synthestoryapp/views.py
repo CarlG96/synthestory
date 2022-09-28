@@ -3,6 +3,7 @@ Code for rendering views in Django.
 """
 import random
 from django.shortcuts import render, redirect, get_object_or_404
+from django.http import HttpResponseForbidden
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from synthestoryapp import models
@@ -34,7 +35,7 @@ def user_story_idea_protection(request):
         return redirect('account_login')
     else:
         # returns user to 403 if they try to access other user's stories
-        return render(request, '403.html')
+        return HttpResponseForbidden(render(request, '403.html'))
 
 
 def get_home_page(request):

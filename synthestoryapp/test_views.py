@@ -18,6 +18,12 @@ class TestLoggedInViews(TestCase):
         login = self.client.login(username=username, password=password)
         self.assertTrue(login)
 
+        second_username = 'PatThePostMan'
+        second_password = 'GoodbyeMoon1234'
+        self.second_user = get_user_model().objects.create_user(
+            username=second_username,
+            password=second_password
+        )
         genre = models.Genre.objects.create(genre_title='testgenre')
         story_start = models.StoryStart.objects.create(story_text='Hello World', genre=genre)
         story_middle = models.StoryMiddle.objects.create(story_text='Hello World', genre=genre)
@@ -49,18 +55,12 @@ class TestLoggedInViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'story-idea.html')
 
-    # def test_403_protection(self):
-    #     username = 'PatThePostman'
-    #     password = 'GoodbyeMoon1234'
-    #     print(self.user.id)
-    #     second_user = get_user_model().objects.create_user(
-    #         username=username,
-    #         password=password
-    #     )
-    #     story_idea = models.StoryIdea.objects.create(title='Pat', story_text='ThePostman', user=second_user)
-
-    #     response = self.client.get(f'/my-stories/{second_user.id}/')
-    #     self.assertEqual(response.status_code, 403)
+    def test_my_stories_protection(self):
+        #     story_idea = models.StoryIdea.objects.create(title='Pat', story_text='ThePostman', user=second_user)
+        response = self.client.get(f'/my-stories/{self.second_user.id}/')
+        self.assertTrue(response.status_code, 403)
+        self.assertTemplateUsed(response, '403.html')
+        
 
 class TestLoggedOutViews(TestCase):
 
