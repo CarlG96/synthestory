@@ -15,6 +15,7 @@ class TestModels(TestCase):
             username=username,
             password=password
         )
+        self.genre = models.Genre.objects.create(genre_title='testgenre')
 
     def test_genre_defaults_to_placeholder(self):
         """
@@ -28,4 +29,16 @@ class TestModels(TestCase):
         story_idea = models.StoryIdea.objects.create(title='Bob', story_text='TheBuilder', user=self.user)
         self.assertTrue(story_idea.__str__() == 'Bob')
 
-    # def test_story_text_is_returned_with_story_start_str_method(self):
+    def test_story_text_is_returned_with_story_start_str_method(self):
+        story_start = models.StoryStart.objects.create(story_text='Hello World', genre=self.genre)
+        self.assertTrue(story_start.__str__() == 'Hello World')
+
+
+    def test_story_text_is_returned_with_story_middle_str_method(self):
+        story_middle = models.StoryMiddle.objects.create(story_text='Hello World', genre=self.genre)
+        self.assertTrue(story_middle.__str__() == 'Hello World')
+
+
+    def test_story_text_is_returned_with_story_end_str_method(self):
+        story_end = models.StoryEnd.objects.create(story_text='Hello World', genre=self.genre)
+        self.assertTrue(story_end.__str__() == 'Hello World')
