@@ -8,6 +8,8 @@ from .forms import StoryIdeaForm
 class TestStoryIdeaForm(TestCase):
     """
     Unit tests to test the StoryIdeaForm.
+    Parameters for each test:
+    self: The class itself.
     """
 
     def test_title_is_required(self):
