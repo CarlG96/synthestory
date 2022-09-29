@@ -9,6 +9,7 @@ from django.contrib import messages
 from synthestoryapp import models
 from .forms import StoryIdeaForm
 
+
 def random_story_part(model_list, id_number):
     """
     Function which takes in a Model and an id
@@ -25,9 +26,9 @@ def random_story_part(model_list, id_number):
 
 def user_story_idea_protection(request):
     """
-    Function which deals with preventing a 
+    Function which deals with preventing a
     user accessing another user's Story Ideas.
-    Takes a request and renders a render or redirect depending 
+    Takes a request and renders a render or redirect depending
     on what is needed.
     """
     if not request.user.is_authenticated:
@@ -160,7 +161,6 @@ def get_my_stories_idea(request, id, idea_id):
     else:
         follow_path = user_story_idea_protection(request)
         return follow_path
-    
 
 
 @login_required
