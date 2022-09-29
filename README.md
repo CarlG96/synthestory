@@ -79,6 +79,11 @@ SyntheStory was created using an agile planning method and utilised the GitHub P
 
 ## Testing
 
+### HTML 
+### CSS 
+### JS
+### PEP8
+### Lighthouse
 
 ## Bugs
 <img src="media/images/bug-image.png">
