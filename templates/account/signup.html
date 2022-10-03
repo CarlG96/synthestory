@@ -11,9 +11,10 @@
       <h1 class="white-text center-text">{% trans "Sign Up" %}</h1>
       <p class="white-text center-text">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign
           in</a>.{% endblocktrans %}</p>
+      
       <form class="signup white-text center-text" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
-        <div>
+        <div class="row signup-text">
         {{ form.as_p }}
       </div>
         {% if redirect_field_value %}

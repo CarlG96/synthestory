@@ -263,7 +263,12 @@ a i {
     text-overflow: ellipsis;
 }
 
-
+/* Signup text */
+@media screen and (max-width: 360px) {
+    .signup-text {
+        font-size: smaller;
+    }
+}
 
 
 
