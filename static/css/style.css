@@ -18,7 +18,7 @@
 }
 
 body {
-    background: var(--dark-shade);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(49,40,52,1) 35%, rgba(109,40,131,1) 100%);
 }
 
 hr {
@@ -41,7 +41,7 @@ hr {
 
 /* Backgrounds */
 .black-background {
-    background-color: var(--dark-shade);
+    background-color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(49,40,52,1) 35%, rgba(109,40,131,1) 100%);;
 }
 
 .white-background {
