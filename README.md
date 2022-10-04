@@ -100,23 +100,44 @@ The SyntheStory project was planned in a series of epics which were broken down 
 ### Homepage when not logged in (desktop view)
 <img src="media/README-images/non-logged-in-homepage.png">
 
+### Homepage when not logged in (mobile view)
+<img src="media/README-images/non-logged-in-mobile.png">
+
 ### Signup page (desktop view)
 <img src="media/README-images/signup-desktop.png">
+
+### Signup page (mobile view)
+<img src="media/README-images/signup-mobile.png">
 
 ### Login page (desktop view)
 <img src="media/README-images/login-desktop.png">
 
+### Login page (mobile view)
+<img src="media/README-images/login-mobile.png">
+
 ### My Stories page (desktop view)
 <img src="media/README-images/my-stories-desktop.png">
+
+### My Stories page (mobile view)
+<img src="media/README-images/my-stories-mobile.png">
 
 ### Edit Item page/ Story Idea page (desktop view)
 <img src="media/README-images/edit-item-desktop.png">
 
+### Edit Item page/ Story Idea page (mobile view)
+<img src="media/README-images/edit-item-mobile.png">
+
 ### Genre page (desktop view)
 <img src="media/README-images/genre-page-desktop.png">
 
+### Genre page (mobile view)
+<img src="media/README-images/genre-page-mobile.png">
+
 ### Genre Type page (desktop view)
 <img src="media/README-images/genre-type-desktop.png">
+
+### Genre Type page (mobile view)
+<img src="media/README-images/genre-type-mobile.png">
 
 ## Technology Used
 
