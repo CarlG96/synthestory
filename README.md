@@ -45,7 +45,7 @@ A feature that is far beyond the scope of this project but might be an idea for 
 
 ## Data Model
 
-Five data models were created for SyntheStory: Genre, StoryStart, StoryMiddle, StoryEnd and StoryIdea. The User model was also imported from django.contrib.auth.models.
+Five data models were created for SyntheStory: Genre, StoryStart, StoryMiddle, StoryEnd and StoryIdea. The User model was also imported from ` django.contrib.auth.models. `
 
 ### Genre Model
 
@@ -70,6 +70,20 @@ The StoryIdea Model represents a saved story idea that is connected to a user. T
 SyntheStory was created using an agile planning method and utilised the GitHub Projects Kanban Board.
 
 ### Sprint Method
+
+The SyntheStory project was developed in a series of sprints. Each sprint ran for 7 days and was tracked using GitHub's Project Milestones and were attached to user stories when completed to signify which sprint they were completed in. The sprints started at Sprint 0 and ran till Sprint 4. Each user story was broken down in to tasks and assigned to an epic, and these epics were also written as user stories. Each user story was designated a number of 'story points' using GitHub's labels (for example, a label of 'SP:1' would signify the user story was estimated to take 1 story point to complete). The epic user stories were not given story points as they were composed of the generic user stories. 
+
+User stories were also assigned labels of 'Must Have', 'Should Have', 'Could Have' and 'Won't Have'. These were assigned when a user story was placed in the 'In Progress' section of the Kanban board. These labels could change between sprints. For example, if a user story had a 'Should Have' in Sprint 1 it would likely have a 'Must Have' in Sprint 2. The 'Won't Have' label was only applied to a single user story. This story was making email signup mandatory and this was because I decided that it was outside the scope of this project.
+
+### Epics and User Stories
+
+#### Setup
+#### Generate Story
+#### Edit Story
+#### Delete Story
+#### Authorisation
+#### Testing 
+#### Visual/ Introductory
 
 [Link to Kanban Board for SyntheStory](https://github.com/users/CarlG96/projects/2/views/1)
 
