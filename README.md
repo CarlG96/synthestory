@@ -68,6 +68,7 @@ The StoryIdea Model represents a saved story idea that is connected to a user. T
 ## Agile Planning
 
 SyntheStory was created using an agile planning method and utilised the GitHub Projects Kanban Board.
+[Link to Kanban Board for SyntheStory](https://github.com/users/CarlG96/projects/2/views/1)
 
 ### Sprint Method
 
@@ -76,28 +77,85 @@ The SyntheStory project was developed in a series of sprints. Each sprint ran fo
 User stories were also assigned labels of 'Must Have', 'Should Have', 'Could Have' and 'Won't Have'. These were assigned when a user story was placed in the 'In Progress' section of the Kanban board. These labels could change between sprints. For example, if a user story had a 'Should Have' in Sprint 1 it would likely have a 'Must Have' in Sprint 2. The 'Won't Have' label was only applied to a single user story. This story was making email signup mandatory and this was because I decided that it was outside the scope of this project.
 
 ### Epics and User Stories
+The SyntheStory project was planned in a series of epics which were broken down into user stories. Here are links to see the user stories of each epic.
 
-#### Setup
-#### Generate Story
-#### Edit Story
-#### Delete Story
-#### Authorisation
-#### Testing 
-#### Visual/ Introductory
+[Setup User Stories](https://github.com/users/CarlG96/projects/2/views/1?filterQuery=label%3A%22Setup+%28epic%29%22)
 
-[Link to Kanban Board for SyntheStory](https://github.com/users/CarlG96/projects/2/views/1)
+[Generate Story User Stories](https://github.com/users/CarlG96/projects/2/views/1?filterQuery=label%3A%22Generate+Story+%28epic%29%22)
 
-## Prototypes and Flowcharts
+[Edit Story User Stories](https://github.com/users/CarlG96/projects/2/views/1?filterQuery=label%3A%22Edit+Story+%28epic%29%22)
 
-## Technology
+[Delete Story User Stories](https://github.com/users/CarlG96/projects/2/views/1?filterQuery=label%3A%22Delete+Story+%28epic%29%22)
+
+[Authorisation User Stories](https://github.com/users/CarlG96/projects/2/views/1?filterQuery=label%3A%22Authorisation+%28epic%29%22)
+
+[Testing User Stories](https://github.com/users/CarlG96/projects/2/views/1?filterQuery=label%3A%22Testing+%28epic%29%22) 
+
+[Visual/ Introductory User Stories](https://github.com/users/CarlG96/projects/2/views/1?filterQuery=label%3A%22Visual%2F+Introductory+%28epic%29%22)
+
+
+
+## Prototypes
+
+## Technology Used
+
+* HTML
+    * Used to create the templates for SyntheStory's pages.
+* CSS 
+    * Used to style the templates for SyntheStory's pages.
+* JavaScript
+    * Used in HTML templates in short scripts to add interactivity to SyntheStory's pages.
+* Bootstrap 
+    * Bootstrap was used to create easier CSS using the grid system, to allow messages and other JavaScript functionality.
+* Python 
+    * Used for the backend of the SyntheStory project
+* Django
+    * Used as framework for the SyntheStory project.
+* PostgreSQL
+    * Database used for SyntheStory project.
+* Lucidchart
+    * Used for the development of a flowchart to concept the ideas.
+* GitHub 
+    * Used for the repository and linked with Heroku to deploy the website.
+* Gitpod
+    * Used for development of the application.
+* Heroku
+    * Used for the deployment of the application.
+* Colormind
+    * Used to determine colors used on SyntheStory webpages. Creates colour schemes
+* Favicon.io
+    * Used for creating the favicons.
+* Cloudinary
+    * Used for static file and image storage.
+* CSS Gradient
+    * Used for CSS color gradient code.
+* Google Fonts
+    * For fonts used in SyntheStory.
+* Font Awesome
+    * Used for icons.
+* Balsamiq
+    * Used to create wireframes.
 
 ## Testing
 
-### HTML 
+### HTML
+Used the HTML validator at (https://validator.w3.org/). Had to copy and paste from 'View Page Source' in browser in live project because of Django's templating laguage messing up the code otherwise. All HTML was valid.
 ### CSS 
+Used the CSS validator at (https://jigsaw.w3.org/css-validator/#validate_by_input). There were errors raised regarding some colors and background colors not being valid however these are not valid errors because they are to do with the validator not recognising gradient coloring correctly. Code was created at (https://cssgradient.io/) and this code works and removing it removes the intended effect. The validator also found an error with the imported fonts from Google Fonts however this is not an error but is due to the validator not checking the imported files.
 ### JS
-### PEP8
+[JS Hint](https://jshint.com/) was used to check the validity of the scripts running in the templates. No errors were found.
+### PEP8/ pylint
+PEP8 was the style guide used for the Python code of this project and pylint was used in the Gitpod environment to check against it. Unfortunately whilst most the of the PEP8 errors were valid and easily fixable, there are numerous 'errors' left in that either cannot be fixed properly or are not actually errors. I will explain each individually:
+- In settings.py pylint records `'env' imported but unused`. This is untrue and in the development environment this was used and removing it breaks SyntheStory's functionality.
+- In setting.py pylint records `line too long`. This is due to the length of some password strings and cannot be adequately fixed as it require breaking the string on a new line.
+- Throughout the Python code pylint repeatedly states `Class 'x' has not 'objects' member`. This is untrue and without the code it references SyntheStory does not work.
+- Throughout the test code pylint repeatedly states `local variable 'x' is assigned but never used`. This is due to it being used in a TestCase setUp function and pylint not recognised it is used in other functions of the test suite after this.
+- Throughout the code pylint states `redefining built in id` and `Argument name 'id' does not conform to snake_case naming style`. As 'id' was used in the Code Institute walkthrough project I believe these are not valide errors.
+- pylint says in test_models.py `Unnecessarily calls dunder method __str__. Use str built in function.` This is due to str built in function being used in __str__ functions of the models to remove another error saying the __str__ method did not return a string. Either way a PEP8 error is thrown so it has been left as is.
 ### Lighthouse
+### Cross browser compatibility
+### Manual Testing
+### Automated Testing
 
 ## Bugs
 <img src="media/images/bug-image.png">
