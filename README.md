@@ -102,21 +102,21 @@ The StoryIdea Model represents a saved story idea that is connected to a user. T
 
 
 ### External Requirements
-asgiref==3.5.2
-cloudinary==1.29.0 For use with dealing with static files on uploaded website.
-dj-database-url==1.0.0 Allows deployment for Heroku url parsing.
-dj3-cloudinary-storage==0.0.6 Django-Cloudinary storage system.
-Django==3.2.15 Django is the framework used for this project.
-django-allauth==0.51.0 For Django authorisation.
-django-crispy-forms==1.14.0 Used for forms to be added to templates.
-gunicorn==20.1.0 
-oauthlib==3.2.1
-psycopg2==2.9.3 
-PyJWT==2.4.0
-python3-openid==3.2.0
-pytz==2022.2.1
-requests-oauthlib==1.3.1
-sqlparse==0.4.2
+* asgiref==3.5.2
+* cloudinary==1.29.0 For use with dealing with static files on uploaded website.
+* dj-database-url==1.0.0 Allows deployment for Heroku url parsing.
+* dj3-cloudinary-storage==0.0.6 Django-Cloudinary storage system.
+* Django==3.2.15 Django is the framework used for this project.
+* django-allauth==0.51.0 For Django authorisation.
+* django-crispy-forms==1.14.0 Used for forms to be added to templates.
+* gunicorn==20.1.0 
+* oauthlib==3.2.1
+* psycopg2==2.9.3 
+* PyJWT==2.4.0
+* python3-openid==3.2.0
+* pytz==2022.2.1
+* requests-oauthlib==1.3.1
+* sqlparse==0.4.2
 
 
 ## Agile Planning
@@ -252,7 +252,6 @@ PEP8 was the style guide used for the Python code of this project and pylint was
 - In setting.py pylint records `line too long`. This is due to the length of some password strings and cannot be adequately fixed as it require breaking the string on a new line.
 - Throughout the Python code pylint repeatedly states `Class 'x' has not 'objects' member`. This is untrue and without the code it references SyntheStory does not work.
 - Throughout the test code pylint repeatedly states `local variable 'x' is assigned but never used`. This is due to it being used in a TestCase setUp function and pylint not recognised it is used in other functions of the test suite after this.
-- Throughout the code pylint states `redefining built in id` and `Argument name 'id' does not conform to snake_case naming style`. As 'id' was used in the Code Institute walkthrough project I believe these are not valide errors.
 - pylint says in test_models.py `Unnecessarily calls dunder method __str__. Use str built in function.` This is due to str built in function being used in __str__ functions of the models to remove another error saying the __str__ method did not return a string. Either way a PEP8 error is thrown so it has been left as is.
 ### Lighthouse
 SyntheStory was tested in Brave's Lightouse feature and was found to be fast-loading and accessible for the visually impaired.

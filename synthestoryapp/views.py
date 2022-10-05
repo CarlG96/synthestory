@@ -87,7 +87,7 @@ def get_genre_page(request):
 
 
 @login_required
-def get_genre_type_page(request, id):
+def get_genre_type_page(request, id_num):
     """
     View which renders genre type page.
     Redirects to my stories page if request is
@@ -120,9 +120,9 @@ def get_genre_type_page(request, id):
         }
         return render(request, 'my-stories.html', context)
     # creates a random sentence that relates to the currently selected genre
-    story_start = random_story_part(models.StoryStart, id)
-    story_middle = random_story_part(models.StoryMiddle, id)
-    story_end = random_story_part(models.StoryEnd, id)
+    story_start = random_story_part(models.StoryStart, id_num)
+    story_middle = random_story_part(models.StoryMiddle, id_num)
+    story_end = random_story_part(models.StoryEnd, id_num)
     initial_data = {
         'story_text': f'{story_start} {story_middle} {story_end}'
     }
@@ -135,7 +135,7 @@ def get_genre_type_page(request, id):
 
 # login required decorator not used due to redirecting to a url with
 # 'None' in if 'My Stories' clicked on
-def get_my_stories_page(request, id):
+def get_my_stories_page(request, id_num):
     """
     View for rendering my stories page. Doesn't use
     login required decorator due to bug where 'None' can be
@@ -152,7 +152,7 @@ def get_my_stories_page(request, id):
     ideas.
     """
     # Prevents user from accessing other users stories
-    if request.user.is_authenticated and str(request.user.id) == id:
+    if request.user.is_authenticated and str(request.user.id) == id_num:
         story_ideas = models.StoryIdea.objects.all().filter(
                                                user=request.user.id)
         context = {
@@ -165,7 +165,7 @@ def get_my_stories_page(request, id):
 
 
 @login_required
-def get_my_stories_idea(request, id, idea_id):
+def get_my_stories_idea(request, id_num, idea_id):
     """
     View for rendering my story idea page.
     Parameters:
@@ -181,7 +181,7 @@ def get_my_stories_idea(request, id, idea_id):
     and the ability to edit it or delete it.
     """
     # Prevents user from accessing other users stories
-    if request.user.is_authenticated and str(request.user.id) == id:
+    if request.user.is_authenticated and str(request.user.id) == id_num:
         story_idea = models.StoryIdea.objects.get(id=idea_id)
         if request.method == 'POST':
             form = StoryIdeaForm(request.POST, instance=story_idea)
@@ -216,7 +216,7 @@ def get_my_stories_idea(request, id, idea_id):
 
 
 @login_required
-def delete_my_stories_idea(request, id, idea_id):
+def delete_my_stories_idea(request, id_num, idea_id):
     """
     Deletes a story idea for the user.
     Parameters:
