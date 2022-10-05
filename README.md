@@ -2,11 +2,15 @@
 
 ## Purpose of SyntheStory
 
-SyntheStory is a website that randomly generates story ideas for authors. The 'story idea' is a central concept on SyntheStory and represents a short and sweet premise for a story.
+SyntheStory is a website that randomly generates story ideas for authors. The 'story idea' is a central concept in SyntheStory and represents a short and sweet premise for a story. The need for a website like SyntheStory would be that authors are sometimes lacking in inspiration and a site generating random ideas can help with filling that void.
 
-After creating an account o SyntheStory, a user can filter by genre and SyntheStory will randomly generate a story idea for the user by pulling from a database containing only that particular genre's ideas. These ideas are created by the admin of the site and additional snippets of ideas and genres can be created by the admin in order to extend the usability of the site.
+After creating an account on SyntheStory, a user can filter by genre and SyntheStory will randomly generate a story idea for the user by pulling from a database containing only that particular genre's ideas. These ideas are created by the admin of the site and additional snippets of ideas and genres can be created by the admin in order to extend the usability of the site.
 
 After a user has given a story idea a title, they can edit (editing can be done before saving), save and delete stories by accessing their own area of the website called 'My Stories'. This way a user can refer to their ideas, change randomly generated ones that don't <em>quite</em> fit and even create entirely original ones. SyntheStory is a website designed to get an author's writing off the ground and NOT a place to actually write stories so there is a character limit on the length of story idea.
+
+<img src="media/README-images/responsive-synthestory.png">
+
+You can find the deployed SyntheStory site by following the link [here](https://synthestory.herokuapp.com/)
 
 ## Features/ Pages
 
@@ -31,7 +35,7 @@ The My Stories Page represents the user's saved stories and as such is unique to
 <img src="media/README-images/my-stories.png">
 
 ### Story Idea Page
-The Story Idea Page is unique to each Story Idea and can only be accessed by the user who's profile corresponds to that particular Story Idea. In the Story Idea page Story Ideas can be edited or deleted by changing the fields and pressing the Edit Story button or pressing the Delete Story button respectively.
+The Story Idea Page is unique to each Story Idea and can only be accessed by the user who's profile corresponds to that particular Story Idea. In the Story Idea page Story Ideas can be edited by pressing the Edit Story Idea button, editing and clicking the Save Edited idea button or deleted by pressing the Delete Story button.
 
 <img src="media/README-images/story-idea.png">
 
@@ -56,6 +60,10 @@ The 403, 404 and 500 error pages are there to indicate errors to a user. The 404
 
 ## Future Features
 A feature that is far beyond the scope of this project but might be an idea for the future would be to somehow link each generated Story Idea up to an API to do with a text-to-image diffusion model which would display an AI generated image displaying the Story Idea in picture form. I am not entirely sure on the achievability of this at the current moment and am ignorant of any potential copyright issues that would occur but believe it might help inspire an author with imagery.
+
+A feature that was not included was a mandatory email signup feature as this was deemed to be outside the scope of the project and unnecessary.
+
+A feature that would auto-generate a title based on the story text of a story idea was considered as an idea but was not included due to the work necessary to make it 'fit' with the story idea organically. I estimated this feature would take more time than it was worth as most users would probably change the title anyway.
 
 ## Data Model
 
@@ -88,6 +96,27 @@ The StoryIdea Model represents a saved story idea that is connected to a user. T
     - login_required decorators for login functionality.
     - render, redirect, get_object_or_404, HttpResponseForbidden for routing.
     - messages for displaying messages to the user when certain actions are completed.
+    - User for user model.
+    - Textarea for fields in forms.
+    - TestCase for testing.
+
+
+### External Requirements
+asgiref==3.5.2
+cloudinary==1.29.0 For use with dealing with static files on uploaded website.
+dj-database-url==1.0.0 Allows deployment for Heroku url parsing.
+dj3-cloudinary-storage==0.0.6 Django-Cloudinary storage system.
+Django==3.2.15 Django is the framework used for this project.
+django-allauth==0.51.0 For Django authorisation.
+django-crispy-forms==1.14.0 Used for forms to be added to templates.
+gunicorn==20.1.0 
+oauthlib==3.2.1
+psycopg2==2.9.3 
+PyJWT==2.4.0
+python3-openid==3.2.0
+pytz==2022.2.1
+requests-oauthlib==1.3.1
+sqlparse==0.4.2
 
 
 ## Agile Planning
@@ -117,8 +146,6 @@ The SyntheStory project was planned in a series of epics which were broken down 
 [Testing User Stories](https://github.com/users/CarlG96/projects/2/views/1?filterQuery=label%3A%22Testing+%28epic%29%22) 
 
 [Visual/ Introductory User Stories](https://github.com/users/CarlG96/projects/2/views/1?filterQuery=label%3A%22Visual%2F+Introductory+%28epic%29%22)
-
-
 
 ## Wireframes
 
@@ -191,7 +218,13 @@ Here are the wireframes created before the SyntheStory project was developed. Th
 * Heroku
     * Used for the deployment of the application.
 * Colormind
-    * Used to determine colors used on SyntheStory webpages. Creates colour schemes
+    * Used to determine colors used on SyntheStory webpages. Creates color schemes. The colors used for SyntheStory were:
+        * #faf7f7 for a light-shade white.
+        * #8b875a for a light-accent.
+        * 82a127 for a green main-brand.
+        * #734f36 for a brown dark accent.
+        * #312834 for a dark shade which was converted to rgba values for the gradient shading of the background.
+        * #b60a0a for a red for the delete button.
 * Favicon.io
     * Used for creating the favicons.
 * Cloudinary
@@ -222,13 +255,31 @@ PEP8 was the style guide used for the Python code of this project and pylint was
 - Throughout the code pylint states `redefining built in id` and `Argument name 'id' does not conform to snake_case naming style`. As 'id' was used in the Code Institute walkthrough project I believe these are not valide errors.
 - pylint says in test_models.py `Unnecessarily calls dunder method __str__. Use str built in function.` This is due to str built in function being used in __str__ functions of the models to remove another error saying the __str__ method did not return a string. Either way a PEP8 error is thrown so it has been left as is.
 ### Lighthouse
+SyntheStory was tested in Brave's Lightouse feature and was found to be fast-loading and accessible for the visually impaired.
+
+Lighthouse check on desktop:
+
+<img src="media/README-images/synthestory-desktop-lighthouse.png">
+
+Lighthouse check on mobile:
+
+<img src="media/README-images/synthestory-desktop-mobile.png">
+
 ### Cross browser compatibility
+SyntheStory was tested in both Brave and Firefox browsers. There is a small issue of messages being unaligned with their cross in Firefox but this does not affect functionality and works in Brave.
 ### Manual Testing
+
+Manual testing was carried out to ensure that SyntheStory worked correctly from a user's point of view. Details of this can be found [here](MANUAL_TESTS.md)
+
 ### Automated Testing
+Automated testing was carried out using TestCase. This was used to ensure there were no 'behind the scenes' problems occurring. One problem that was highlighted was that the 403 error page was being given as a 200 response so the HttpForbidden method was used to make sure a 403 response was given when this appeared.
+
 <img src="media/README-images/automated-tests.png">
 
 ## Bugs
+
 <img src="media/README-images/bug-image.png">
+
 I tried to use an internal script in the HTML to pre-populate a form by changing it's 'value' attribute in the HTML with data passed in from the view. This caused Django to represent any unusual characters (such as apostrophes) with data such as '&#x27;' as a safety precaution. I then tried to use an external JavaScript file to do the same but this resulted in it not reading the Django template properly and showing no data. To rectify the problem I passed in an a dictionary of values to the form in the view as an initial value which populated the fields without bugs.
 
 ACCOUNT_EMAIL_VERIFICATION was set to 'optional' in settings. When making fake accounts to test the signup feature using fake email addresses would cause a 500 internal server error due to the email not being sent to a valid email address but the account would still be created. As SyntheStory does not require an email address to verify account I decided to change ACCOUNT_EMAIL_VERIFICATION to 'none' to prevent internal server errors.
@@ -241,6 +292,23 @@ Firefox messages: The messages that display on firefox browser do not have the t
 
 ## Deployment
 
+SyntheStory was deployed on Heroku. Here are the steps to achieve this:
+
+* Clicked on "Create new app" on Heroku account and named app 'synthestory' and selected region as 'Europe'.
+* In resources, select Heroku Postgres on the Hobby Dev setting.
+* Add config vars in settings, including PORT, CLOUDINARY_URL, DATABASE_URL and SECRET_KEY.
+* Make sure Debug is set to False in your settings.py file in your code.
+* Connect GitHub repository in Deploy section and either automatically or manually deploy.
+* The site should deploy after these steps.
+
 ## Credits
-https://www.youtube.com/watch?v=qNifU_aQRio tutorial for navbar
-pixabay for images
+* [Tutorial followed for navbar.](https://www.youtube.com/watch?v=qNifU_aQRio)
+* [Pixabay](https://pixabay.com/) for images.
+* [CSS Gradient](https://cssgradient.io/) used for generating code for background color.
+* [favicon.io](https://favicon.io/) for the favicons used.
+* [Am I Responsive?](https://ui.dev/amiresponsive) for image at the top of README.
+* [Code Institute](https://codeinstitute.net/) for the walkthrough projects which helped with understanding how to structure a Django project.
+* [Colormind](http://colormind.io/) for generating color schemes that I selected from.
+* [Lucidchart](https://www.lucidchart.com/pages/) for the software used to create the ERD diagram.
+* [Font Awesome](https://fontawesome.com/) for the icons used to link to social media.
+* [Google Fonts](https://fonts.google.com/) for the fonts used in the project, which were Sail and Roboto.
