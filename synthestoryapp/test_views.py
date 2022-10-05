@@ -183,6 +183,7 @@ class TestLoggedOutViews(TestCase):
         """
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'index.html')
 
     def test_get_genre_page_redirect(self):
         """
@@ -192,6 +193,7 @@ class TestLoggedOutViews(TestCase):
         """
         response = self.client.get('/genre-page/')
         self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, '/accounts/login/?next=/genre-page/')
 
     def test_get_genre_type_page_redirect(self):
         """
@@ -201,6 +203,7 @@ class TestLoggedOutViews(TestCase):
         """
         response = self.client.get('/genre-type/1/')
         self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, '/accounts/login/?next=/genre-type/1/')
 
     def test_get_my_stories_page_redirect(self):
         """
@@ -210,6 +213,7 @@ class TestLoggedOutViews(TestCase):
         """
         response = self.client.get(f'/my-stories/{self.user.id}/')
         self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, '/accounts/login/')
 
     def test_get_story_idea_redirect(self):
         """
@@ -223,3 +227,4 @@ class TestLoggedOutViews(TestCase):
         response = self.client.get(
                               f'/my-stories/{self.user.id}/{story_idea.id}/')
         self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, f'/accounts/login/?next=/my-stories/{self.user.id}/{story_idea.id}/')
