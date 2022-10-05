@@ -39,7 +39,8 @@ The Login, Logout and Signup pages act as you would imagine, giving people the o
 ### Error Pages
 The 403, 404 and 500 error pages are there to indicate errors to a user. The 404 page will occur if the user tries to access something which does not exist. The 403 page will occur if the user tries to interact with another user's Story Ideas and the 500 page will occur if there is an internal server error. The user will be redirected to the homepage from there.
 
-<!-Picture goes here->
+<img src="media/README-images/500-error.png">
+
 ## Future Features
 A feature that is far beyond the scope of this project but might be an idea for the future would be to somehow link each generated Story Idea up to an API to do with a text-to-image diffusion model which would display an AI generated image displaying the Story Idea in picture form. I am not entirely sure on the achievability of this at the current moment and am ignorant of any potential copyright issues that would occur but believe it might help inspire an author with imagery.
 
@@ -96,6 +97,8 @@ The SyntheStory project was planned in a series of epics which were broken down 
 
 
 ## Wireframes
+
+Here are the wireframes created before the SyntheStory project was developed. The homepage screen is the only one that shows a non-logged in navigation bar due to all others only being accessible when logged in and the navigation bar after being logged in staying the same.
 
 ### Homepage when not logged in (desktop view)
 <img src="media/README-images/non-logged-in-homepage.png">
@@ -198,6 +201,7 @@ PEP8 was the style guide used for the Python code of this project and pylint was
 ### Cross browser compatibility
 ### Manual Testing
 ### Automated Testing
+<img src="media/README-images/automated-tests.png">
 
 ## Bugs
 <img src="media/README-images/bug-image.png">
