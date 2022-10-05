@@ -13,33 +13,46 @@ After a user has given a story idea a title, they can edit (editing can be done 
 ### Homepage
 The Homepage contains a brief introduction and instructions on how to use SyntheStory. It is the only 'main page' (meaning pages other than error pages or pages to do with login) which does not require login access.
 
-<!-Picture goes here->
+<img src="media/README-images/homepage.png">
 
 ### Genre Page
 The Genre page contains a list of genres from which the user can choose to narrow down a generated story idea. They can click on the links in the cards to take them to a Genre Type page which will display a Story Idea with their chosen genre.
 
-<!-Picture goes here->
+<img src="media/README-images/genre-page.png">
 
 ### Genre Type Page
 The Genre Type page contains a randomly generated Story Idea taken from a 'bank' of Story pieces in the database related to a specific genre. The user can save a story idea using the Save Story Idea! button or refresh the page with a new randomly generated Story Idea by clicking the Generate Another Idea! button. The user can also edit the Story Idea field text and both fields must be filled in before a submission can be made.
 
-<!-Picture goes here->
+<img src="media/README-images/genre-type.png">
 
 ### My Stories Page
 The My Stories Page represents the user's saved stories and as such is unique to each user (see MANUAL_TESTS.md for information on how users are prevented from interfering with other users' data). The My Stories page contains links to each of the users saved Story Ideas.
 
-<!-Picture goes here->
+<img src="media/README-images/my-stories.png">
+
 ### Story Idea Page
 The Story Idea Page is unique to each Story Idea and can only be accessed by the user who's profile corresponds to that particular Story Idea. In the Story Idea page Story Ideas can be edited or deleted by changing the fields and pressing the Edit Story button or pressing the Delete Story button respectively.
 
-<!-Picture goes here->
+<img src="media/README-images/story-idea.png">
+
 ### Login, Logout and Signup pages
 The Login, Logout and Signup pages act as you would imagine, giving people the opportunity to make accounts and work the site. Many parts of the site will be blocked off and will redirect to the Login page unless a user is logged in.
+
+<img src="media/README-images/login.png">
+
+<img src="media/README-images/signup.png">
+
+<img src="media/README-images/logout.png">
 
 ### Error Pages
 The 403, 404 and 500 error pages are there to indicate errors to a user. The 404 page will occur if the user tries to access something which does not exist. The 403 page will occur if the user tries to interact with another user's Story Ideas and the 500 page will occur if there is an internal server error. The user will be redirected to the homepage from there.
 
 <img src="media/README-images/500-error.png">
+
+<img src="media/README-images/403-error.png">
+
+<img src="media/README-images/404-error.png">
+
 
 ## Future Features
 A feature that is far beyond the scope of this project but might be an idea for the future would be to somehow link each generated Story Idea up to an API to do with a text-to-image diffusion model which would display an AI generated image displaying the Story Idea in picture form. I am not entirely sure on the achievability of this at the current moment and am ignorant of any potential copyright issues that would occur but believe it might help inspire an author with imagery.
@@ -62,9 +75,20 @@ The StoryIdea Model represents a saved story idea that is connected to a user. T
 
 ### Entity Relationship Diagram
 
+<img src="media/README-images/ERD-diagram.png">
 
 
 ## Imported Modules, Installed Apps
+
+### Python Modules
+
+- random
+    - Used for randrange function to randomise the story idea generated.
+- Django
+    - login_required decorators for login functionality.
+    - render, redirect, get_object_or_404, HttpResponseForbidden for routing.
+    - messages for displaying messages to the user when certain actions are completed.
+
 
 ## Agile Planning
 
