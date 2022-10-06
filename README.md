@@ -103,6 +103,7 @@ The StoryIdea Model represents a saved story idea that is connected to a user. T
 
 ### External Requirements
 * asgiref==3.5.2
+* coverage==6.5.0 for the coverage report.
 * cloudinary==1.29.0 For use with dealing with static files on uploaded website.
 * dj-database-url==1.0.0 Allows deployment for Heroku url parsing.
 * dj3-cloudinary-storage==0.0.6 Django-Cloudinary storage system.
