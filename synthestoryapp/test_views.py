@@ -138,6 +138,18 @@ class TestLoggedInViews(TestCase):
         self.assertTrue(response.status_code, 403)
         self.assertTemplateUsed(response, '403.html')
 
+    def test_get_404_page(self):
+        """
+        Tests whether the client request gets a 404
+        response when the user tries to access a
+        non-existant page. Also makes sure the user is
+        redirected to a page using the '404.html'
+        template.
+        """
+        response = self.client.get('/flarblegarble/')
+        self.assertTrue(response.status_code, 404)
+        self.assertTemplateUsed(response, '404.html')
+
 
 class TestLoggedOutViews(TestCase):
     """
@@ -227,4 +239,6 @@ class TestLoggedOutViews(TestCase):
         response = self.client.get(
                               f'/my-stories/{self.user.id}/{story_idea.id}/')
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, f'/accounts/login/?next=/my-stories/{self.user.id}/{story_idea.id}/')
+        self.assertRedirects(
+         response,
+         f'/accounts/login/?next=/my-stories/{self.user.id}/{story_idea.id}/')
