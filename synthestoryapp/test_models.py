@@ -36,6 +36,15 @@ class TestModels(TestCase):
         genre = models.Genre.objects.create()
         self.assertTrue(genre.genre_image == 'placeholder')
 
+    def test_title_is_returned_with_genre_str_method(self):
+        """
+        Function that tests the __str__ method
+        for Genre. Checks whether it
+        returns the correct string.
+        """
+        story_idea = models.Genre.objects.create(genre_title='Bob')
+        self.assertTrue(story_idea.__str__() == 'Bob')
+
     def test_title_is_returned_with_story_idea_str_method(self):
         """
         Function that tests the __str__ method

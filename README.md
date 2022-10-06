@@ -273,7 +273,14 @@ Manual testing was carried out to ensure that SyntheStory worked correctly from 
 ### Automated Testing
 Automated testing was carried out using TestCase. This was used to ensure there were no 'behind the scenes' problems occurring. One problem that was highlighted was that the 403 error page was being given as a 200 response so the HttpForbidden method was used to make sure a 403 response was given when this appeared.
 
+Here is an image of the tests being carried out:
+
 <img src="media/README-images/automated-tests.png">
+
+#### Coverage
+A coverage report of automated testing was carried out. This shows the amount of coverage the automated testing dealt with. The automated tests were carried out to 93% coverage. The only part of the application that didn't get complete automated coverage was the views and was to do with post requests and deletion of story ideas which are more easily handled and verified through manually checking that they work.
+
+<img src="media/README-images/synthestory-coverage.png">
 
 ## Bugs
 
