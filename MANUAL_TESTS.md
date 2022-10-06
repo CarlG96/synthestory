@@ -294,6 +294,7 @@ Here are a list of manual tests that have been carried out to ensure that Synthe
 
     <img src="media/MANUAL_TESTING-images/delete-button.png">
 
+
 ### Message Testing
 * The user should receive a message when they delete a Story Idea that disappears after three seconds unless it is closed out.
 
